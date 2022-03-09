@@ -1,0 +1,23 @@
+target:
+  url: gojek.com
+  tech-stack: django cms, postgresql, alpine.js:2.7.0, nginx, python, HAproxy
+  open-port: 80/http, 443/https
+  filtered-port: 
+  host-ip: 104.155.199.9
+  recon:
+    - tools: nmap
+      report: report/nmap/gojek.com.txt
+    - tools: theHarvester
+      report: report/theHarvester/gojek.com.txt
+
+recon-found:
+  API-wrapper:
+    - info: unofficial API-wrapper
+      desc: https://github.com/namdevel/gopay-api this repository reverse the gopay app
+  virus-total:
+    - details-result: https://www.virustotal.com/gui/url/33fc58a35514a5e677ce29234e653467293b21730fd4e1cfd461315bb96be9f9
+      desc: found nothing
+
+ssl-implemented:
+  - result: Yes
+    http-redirect: True

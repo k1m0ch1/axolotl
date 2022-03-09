@@ -1,0 +1,475 @@
+
+[93m*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.0.3                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+******************************************************************* 
+
+[0m
+[94m[*] Target: gojek.com 
+ [0m
+
+[93m[!] Missing API key for binaryedge. [0m
+
+[93m[!] Missing API key for Censys ID and/or Secret. [0m
+
+[93m[!] Missing API key for PentestTools. [0m
+
+[93m[!] Missing API key for Securitytrail. [0m
+
+[93m[!] Missing API key for Intelx. [0m
+
+[93m[!] Missing API key for fullhunt. [0m
+
+[93m[!] Missing API key for Hunter. [0m
+
+[93m[!] Missing API key for zoomeye. [0m
+
+[93m[!] Missing API key for Github. [0m
+
+[93m[!] Missing API key for Spyse. [0m
+
+[93m[!] Missing API key for ProjectDiscovery. [0m
+
+[93m[!] Missing API key for RocketReach. [0m
+[94m[*] Searching Sublist3r. [0m
+	Searching results.
+[94m[*] Searching Certspotter. [0m
+[94m[*] Searching Dnsdumpster. [0m
+[94m[*] Searching Duckduckgo. [0m
+Google is blocking your ip and the workaround, returning
+	Searching 100 results.
+Google is blocking your ip and the workaround, returning
+	Searching 0 results.
+Google is blocking your ip and the workaround, returning
+Google is blocking your ip and the workaround, returning
+	Searching 100 results.
+	Searching 200 results.
+[94m[*] Searching Baidu. [0m
+[94m[*] Searching Threatcrowd. [0m
+Google is blocking your ip and the workaround, returning
+	Searching 200 results.
+Google is blocking your ip and the workaround, returning
+	Searching 300 results.
+Google is blocking your ip and the workaround, returning
+[94m[*] Searching Twitter. [0m
+Google is blocking your ip and the workaround, returning
+	Searching 300 results.
+Google is blocking your ip and the workaround, returning
+[94m[*] Searching Qwant. [0m
+	Searching 400 results.
+Google is blocking your ip and the workaround, returning
+	Searching 400 results.
+[94m[*] Searching Threatminer. [0m
+[94m[*] Searching Bufferoverun. [0m
+Google is blocking your ip and the workaround, returning
+Google is blocking your ip and the workaround, returning
+	Searching 500 results.
+[94m[*] Searching Google. [0m
+	Searching 500 results.
+[94m[*] Searching Linkedin. [0m
+An exception has occurred: 0, message='Attempt to decode JSON with unexpected mimetype: text/html; charset=iso-8859-1', url=URL('https://api.n45ht.or.id/v1/subdomain-enumeration?domain=gojek.com')
+[94m[*] Searching Omnisint. [0m
+[94m[*] Searching Hackertarget. [0m
+[94m[*] Searching Urlscan. [0m
+[94m[*] Searching Rapiddns. [0m
+	Searching results.
+Google is blocking your ip and the workaround, returning
+	Searching 100 results.
+	Searching 0 results.
+[94m[*] Searching Bing. [0m
+[94m[*] Searching Virustotal. [0m
+[94m[*] Searching CRTsh. [0m
+Google is blocking your ip and the workaround, returning
+	Searching 200 results.
+Google is blocking your ip and the workaround, returning
+	Searching 0 results.
+[94m[*] Searching Trello. [0m
+[94m[*] Searching Otx. [0m
+[94m[*] Searching Anubis. [0m
+Google is blocking your ip and the workaround, returning
+	Searching 300 results.
+Google is blocking your ip and the workaround, returning
+	Searching 400 results.
+Google is blocking your ip and the workaround, returning
+	Searching 500 results.
+[94m[*] Searching Linkedin. [0m
+
+[*] ASNS found: 3
+--------------------
+AS14340
+AS15169
+AS16509
+
+[*] Interesting Urls found: 27
+--------------------
+https://integration-login.gojek.com/
+https://login.gojek.com/ln/4g2EUJUEScb
+https://login.gojek.com/ln/4mcJhhoid2f%204PKeZqV9ubl
+https://login.gojek.com/ln/4muBcMDoaqL4PKeZqV9ubl
+https://onegojek.gojek.com/s/article/How-to-Raise-a-Ticket-on
+https://onegojek.gojek.com/s/login/?ec=302&startURL=%2Fs%2F
+https://track-integration.gojek.com/
+https://track.gojek.com/
+https://www.gojek.com/
+https://www.gojek.com/blog/gofood/mamimumemo/?pid=Newsletter&is_retargeting=true&af_click_lookback=7d&utm_content=FOOD%20Mamimumemo%20Dedicated%20Newsletter%20Gofood%2012%20Nov%202019&utm_source=Newsletter&utm_medium=Email&af_adset=FOOD%20Mamimumemo%20Dedicated%20Newsletter%20Gofood%2012%20Nov%202019&af_ad=FOOD%20Mamimumemo%20Dedicated%20Newsletter%20Gofood%2012%20Nov%202019&utm_campaign=FOOD%20Mamimumemo%20Dedicated%20Newsletter%20Gofood%2012%20Nov%202019&af_channel=Organic&utm_term=FOOD%20Mamimumemo%20Dedicated%20Newsletter%20Gofood%2012%20Nov%202019&c=FOOD%20Mamimumemo%20Dedicated%20Newsletter%20Gofood%2012%20Nov%202019
+https://www.gojek.com/blog/gojek/cara-amankan-akun-gojek/?utm_source=SMS&utm_medium=SMS&utm_campaign=Identifikasi%20Akun%20Profil
+https://www.gojek.com/blog/gojek/waspada-penipuan/?af_force_deeplink=true&pid=Blog&is_retargeting=true&af_click_lookback=7d&utm_content=%20Waspada%20Penipuan&utm_source=Blog&utm_medium=Referral&af_adset=%20Waspada%20Penipuan&af_ad=%20Waspada%20Penipuan&utm_campaign=%20Waspada%20Penipuan&af_channel=Organic&utm_term=%20Waspada%20Penipuan&c=%20Waspada%20Penipuan
+https://www.gojek.com/blog/gopay/modus-penipuan/?utm_source=InApp&utm_medium=&utm_campaign=GopayScam
+https://www.gojek.com/en-id/
+https://www.gojek.com/gofood/
+https://www.gojek.com/gomart/
+https://www.gojek.com/gopay/
+https://www.gojek.com/id-id/
+https://www.gojek.com/safety/4PKeZqV9ubI
+https://www.gojek.com/sg/?pid=gjk&c=promo&af_adset=-&af_ad=ride&af_click_lookback=30d&source=gojek
+https://www.gojek.com/sg/?pid=gojek&c=promo&af_adset=-&af_ad=ride&af_click_lookback=30d&source=gojek
+https://www.gojek.com/sg/blog/
+https://www.gojek.com/sg/blog/explore-halloween-movies-singapore-2021/
+https://www.gojek.com/sg/blog/news-edit-pickup-location-gojek-singapore/
+https://www.gojek.com/sg/blog/news-gojek-3-year-anniversary-singapore/
+https://www.gojek.com/sg/privacy-policy/
+https://www.gojek.com/~http://www.go-jek.com/~http://go-jek.com/~http://jek.com/~http://www.go-jek.com/
+
+[*] No Twitter users found.
+
+
+
+[*] No LinkedIn users found.
+
+
+
+[*] LinkedIn Links found: 0
+---------------------
+
+[*] No Trello URLs found.
+
+[*] IPs found: 274
+-------------------
+3.64.163.50
+13.109.141.71
+13.109.141.124
+13.229.38.226
+34.80.34.252
+34.98.99.30
+34.102.136.180
+34.102.149.146
+34.120.52.245
+34.120.215.126
+35.168.187.155
+35.194.150.98
+35.201.224.86
+35.213.175.77
+35.221.158.128
+35.224.96.164
+35.229.170.206
+35.247.162.248
+52.2.56.64
+52.21.33.16
+52.58.78.16
+52.219.32.2
+52.219.32.6
+52.219.32.10
+52.219.32.14
+52.219.32.18
+52.219.32.22
+52.219.32.26
+52.219.32.30
+52.219.32.34
+52.219.32.38
+52.219.32.42
+52.219.32.46
+52.219.32.74
+52.219.32.78
+52.219.32.82
+52.219.32.86
+52.219.32.90
+52.219.32.94
+52.219.32.98
+52.219.32.102
+52.219.32.106
+52.219.32.110
+52.219.32.114
+52.219.32.118
+52.219.32.122
+52.219.32.126
+52.219.32.130
+52.219.32.134
+52.219.32.138
+52.219.32.142
+52.219.32.145
+52.219.32.149
+52.219.32.153
+52.219.32.157
+52.219.32.161
+52.219.32.165
+52.219.32.169
+52.219.32.173
+52.219.32.177
+52.219.32.181
+52.219.32.185
+52.219.32.189
+52.219.32.225
+52.219.32.229
+52.219.32.237
+52.219.32.245
+52.219.36.2
+52.219.36.10
+52.219.36.14
+52.219.36.18
+52.219.36.22
+52.219.36.26
+52.219.36.30
+52.219.36.34
+52.219.36.38
+52.219.36.42
+52.219.36.46
+52.219.36.50
+52.219.36.62
+52.219.36.66
+52.219.36.70
+52.219.36.74
+52.219.36.78
+52.219.36.82
+52.219.36.86
+52.219.36.90
+52.219.36.98
+52.219.36.102
+52.219.36.106
+52.219.36.110
+52.219.36.114
+52.219.36.118
+52.219.36.122
+52.219.36.126
+52.219.36.130
+52.219.36.134
+52.219.36.138
+52.219.36.142
+52.219.36.145
+52.219.36.149
+52.219.36.153
+52.219.36.157
+52.219.36.161
+52.219.36.165
+52.219.36.169
+52.219.36.173
+52.219.36.177
+52.219.36.181
+52.219.36.185
+52.219.36.189
+52.219.36.225
+52.219.36.229
+52.219.36.233
+52.219.36.237
+52.219.36.241
+52.219.36.245
+52.219.40.2
+52.219.40.6
+52.219.40.10
+52.219.40.14
+52.219.40.18
+52.219.40.22
+52.219.40.26
+52.219.40.30
+52.219.40.34
+52.219.40.38
+52.219.40.42
+52.219.40.46
+52.219.40.74
+52.219.40.78
+52.219.40.82
+52.219.40.86
+52.219.40.90
+52.219.40.94
+52.219.40.98
+52.219.40.102
+52.219.40.106
+52.219.40.110
+52.219.40.114
+52.219.40.118
+52.219.40.122
+52.219.40.126
+52.219.40.130
+52.219.40.134
+52.219.40.138
+52.219.40.142
+52.219.40.149
+52.219.40.153
+52.219.40.157
+52.219.40.161
+52.219.40.165
+52.219.40.169
+52.219.40.173
+52.219.40.177
+52.219.40.181
+52.219.40.185
+52.219.40.189
+52.219.40.237
+52.219.40.245
+54.153.59.124
+54.192.73.11
+54.192.73.25
+54.192.73.86
+54.192.73.93
+54.230.126.37
+54.230.126.47
+54.230.126.76
+54.230.126.128
+75.2.26.18
+83.136.216.197
+99.83.153.108
+99.84.64.10
+99.84.64.18
+99.84.64.95
+99.84.64.97
+99.84.64.104
+99.84.64.121
+99.84.64.126
+99.84.64.127
+99.84.66.20
+99.84.66.32
+99.84.66.92
+99.84.66.125
+99.84.71.34
+99.84.71.104
+99.84.71.146
+99.84.71.202
+99.84.79.50
+99.84.79.74
+99.84.79.80
+99.84.79.95
+103.7.41.224
+103.25.222.9
+103.253.214.7
+104.21.36.165
+104.155.199.9
+104.199.193.9
+112.213.91.61
+121.254.178.252
+143.95.251.122
+156.224.61.203
+160.8.22.251
+161.97.179.236
+162.255.119.35
+162.255.119.43
+162.255.119.123
+162.255.119.254
+164.155.118.247
+172.67.196.253
+172.120.253.194
+173.247.240.5
+188.166.236.203
+192.64.119.128
+192.64.119.185
+192.64.119.244
+192.64.119.254
+198.49.23.144
+198.49.23.145
+198.185.159.144
+198.185.159.145
+203.175.9.12
+204.246.191.4
+204.246.191.11
+204.246.191.31
+204.246.191.38
+204.246.191.69
+204.246.191.101
+204.246.191.121
+204.246.191.122
+213.171.195.105
+216.239.32.21
+216.239.34.21
+216.239.36.21
+216.239.38.21
+2600:9000:2182:7e00:3:5e21:cec0:93a1
+2600:9000:2182:ce00:6:46a3:7940:93a1
+
+[*] No emails found.
+
+[*] Hosts found: 163
+---------------------
+accounts-integration.gojek.com:34.149.74.180
+accounts.gojek.com:34.120.226.254
+api.gojek.com
+asphalt.gojek.com:108.138.141.58, 108.138.141.111, 108.138.141.41, 108.138.141.107
+asphalt.gojek.com:143.204.151.4
+autodiscover.gojek.com.ph:101.100.204.200
+autodiscover.gojek.com.sg:101.100.204.200
+career.gojek.com:104.155.199.9
+cpanel.gojek.com.ph:101.100.204.200
+cpanel.gojek.com.sg:101.100.204.200
+cpcalendars.gojek.com.ph:101.100.204.200
+cpcalendars.gojek.com.sg:101.100.204.200
+cpcontacts.gojek.com.ph:101.100.204.200
+cpcontacts.gojek.com.sg:101.100.204.200
+delivery.gojek.com:139.59.218.231
+delivery.gojek.com:lnk.pepipost.net
+developer.gojek.com:34.111.241.74
+developers.gojek.com:104.155.199.9
+devopsdaysindia.gojek.com:10.1.2.3
+devopsdaysindia1.gojek.com:10.1.2.3
+email.admin.gocorp.gojek.com:d1ybb0mndmobz.cloudfront.net
+email.admin.gocorp.gojek.com:108.138.141.9, 108.138.141.70, 108.138.141.53, 108.138.141.46
+email.gojek.com:52.204.100.154, 3.226.102.243
+fossasia.gojek.com:10.2.2.3
+gocorp-integration.gojek.com:d3s1ljq1i8hs2b.cloudfront.net.
+gocorp-integration.gojek.com:108.138.141.97, 108.138.141.23, 108.138.141.42, 108.138.141.127
+gocorp-integration.gojek.com:do1qx3vz54uov.cloudfront.net
+gocorp-integration.gojek.com:d3s1ljq1i8hs2b.cloudfront.net
+gocorp-test.gojek.com
+gocorp.gojek.com:dsjghscbu7g1k.cloudfront.net.
+gocorp.gojek.com:108.138.141.3, 108.138.141.23, 108.138.141.19, 108.138.141.93
+gocorp.gojek.com:dsjghscbu7g1k.cloudfront.net
+gocorp.gojek.com:d63ssiylx8lck.cloudfront.net
+gofigure.gojek.com:104.155.199.9
+goto-staging.gojek.com:10.120.7.23
+gotroops.gojek.com
+i-integration.gojek.com:35.201.91.74
+integration-login.gojek.com:35.221.158.128
+integration.developer.gojek.com:34.111.208.176
+l.gojek.com:52.62.236.34, 52.62.166.77, 54.79.92.237
+l.gojek.com:52.62.236.34, 54.79.92.237, 52.62.166.77
+l.gojek.com:cname.short.io
+l.gojek.com:cname.short.io.
+login.gojek.com:35.201.224.86
+mailserver.gojek.com
+netbox-test.gojek.com:35.229.170.206
+newsroom.gojek.com:198.185.159.144
+one.gojek.com:one.gojek.com.00d5g000001dtsmea0.live.siteforce.com
+one.gojek.com:4.0p15g00000bte8zcad.00d5g000001dtsmea0.gslb.siteforce.com
+one.gojek.com:104.161.133.218
+onegojek.gojek.com:35.213.175.77
+send.gojek.com:35.187.239.229
+smpt.gojek.com
+sms-demo.gojek.com
+test-delete.gojek.com
+test1.gojek.com:10.1.2.3
+test3.gojek.com
+thmerchant.gojek.com:35.247.162.248
+thmerchant.gojek.com
+track-integration.gojek.com:d12b1jrq8gdzy3.cloudfront.net.
+track-integration.gojek.com:d12b1jrq8gdzy3.cloudfront.net
+track-integration.gojek.com:108.138.141.67, 108.138.141.78, 108.138.141.101, 108.138.141.57
+track.gojek.com:108.138.141.78, 108.138.141.99, 108.138.141.117, 108.138.141.119
+track.gojek.com:dzp3mi4tgihnp.cloudfront.net
+track.gojek.com:dzp3mi4tgihnp.cloudfront.net.
+trk.gojek.com:104.199.246.167, 104.199.163.109
+webdisk.gojek.com.ph:101.100.204.200
+webdisk.gojek.com.sg:101.100.204.200
+webmail.gojek.com.ph:101.100.204.200
+webmail.gojek.com.sg:101.100.204.200
+www.gojek.com:104.155.199.9
+www.gotroops.gojek.com
+www.newsroom.gojek.com:ext-cust.squarespace.com
+www.newsroom.gojek.com:ext-cust.squarespace.com.
+www.newsroom.gojek.com:198.185.159.144, 198.49.23.144, 198.49.23.145, 198.185.159.145
+www.one.gojek.com
+www.onegojek.gojek.com

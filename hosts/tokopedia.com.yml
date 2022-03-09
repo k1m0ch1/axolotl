@@ -1,0 +1,5 @@
+target:
+  url: tokopedia.com
+  tech-stack: reactjs, nginx, akamai, 
+  open-port: 80/http, 443/https
+  host-ip: 47.74.244.18

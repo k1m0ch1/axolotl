@@ -1,0 +1,5 @@
+target:
+  url: gojek.com
+  tech-stack: django cms, postgresql, alpine.js:2.7.0, nginx, python, HAproxy
+  open-port: 80/http, 443/https
+  host-ip: 104.155.199.9
