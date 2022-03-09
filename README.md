@@ -1,4 +1,5 @@
 File Structure
+```
 root of this repo
 ├── hosts
 | ├── all.txt
@@ -16,8 +17,10 @@ root of this repo
 ├── axolotl
 | └── src
 └── Makefile
+```
 
 Host Identity Format
+```
 target:
   url: domain or apps 
   tech-stack: js, lalala
@@ -87,9 +90,10 @@ ssl-implemented:
 shodan-result:
   - info:
     result-ip:https://www.shodan.io/search?query=net:1.2.3.4,5.6.7.8,9.10.11.12
+```
 Vulnerability Report Format
 using YAML nuclei format
-
+```
 id: url-slug-name-vuln-with-version
 
 info:
@@ -144,3 +148,4 @@ status:
   rejected_at:
   closed_at:
   complete_at:
+```
