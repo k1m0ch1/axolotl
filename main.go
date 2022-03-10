@@ -3,34 +3,39 @@ package main
 import(
 	"log"
 	"fmt"
-	"io/ioutil"
-
-	yaml "github.com/goccy/go-yaml"
+	
+	utils "github.com/k1m0ch1/axolotl/utils"
 )
 
 func main(){
-	files, err := ioutil.ReadDir("hosts")
+	
+	var cfg utils.UserConfig
+	cfg.Load("config.yml")
+
+	HostFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.HostsIdentityDir), "*.yml")
+	for _, f := range HostFile {
+		var h utils.HostIdentity
+		h.Load(f)
+		fmt.Printf("\nHost: %s", h.Info.URL)
+		fmt.Printf("\nTechStack: %s\n", h.Info.TechStacks)
+	}
+
+	VulnFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.VulnDir), "*.yml")
 	if err != nil {
 		log.Fatal(err)
 	}
-	for _, f := range files {
-		var h Host
-		fileName := fmt.Sprintf("./hosts/%s", f.Name())
-		h.LoadFile(fileName)
-		fmt.Println("Host: ", h.Target.Url)
-		fmt.Println("TechStack: ", h.Target.TechStack)
+
+	fmt.Println(len(HostFile), " Host Available")
+	fmt.Println(len(VulnFile), " Vuln Available")
+
+	GenerateHost := cfg.GenerateHost("mantap.com")
+	if GenerateHost != nil {
+		log.Fatal(err)
+	}
+
+	GenerateVuln := cfg.GenerateVuln("mantap.com", "the-attack-on-titan")
+	if GenerateVuln != nil {
+		log.Fatal(err)
 	}
 }
 
-func (h *Host) LoadFile(filename string) *Host {
-    yamlFile, err := ioutil.ReadFile(filename)
-    if err != nil {
-		log.Printf("yamlFile.Get err   #%v ", err)
-    }
-    err = yaml.Unmarshal(yamlFile, h);
-    if err != nil {
-        log.Fatalf("Unmarshal: %v", err)
-    }
-
-    return h
-}

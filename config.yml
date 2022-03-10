@@ -1,0 +1,21 @@
+project-owner: k1m0ch1
+Group: eFishery
+email: yahya.fadhluloh@efishery.com
+
+teams:
+  - team-name: red team
+    members:
+      - name: k1m0ch1
+        role: lead Pentest
+        email: sugoi@gmail.com
+      - name: k1m0ch12
+        role: lead Pentest2
+        email: sugo2@gmail.com
+
+dir-config:
+  hosts-identity-dir: hosts
+  tools-reports: reports
+  vuln-dir: vulns
+  poc-dir: hosts
+  output-report-dir: outputs
+  templates-report-dir: outputs

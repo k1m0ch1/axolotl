@@ -1,0 +1,20 @@
+A : 104.155.199.9
+MX : 10 mxa-0057bd01.gslb.pphosted.com.
+MX : 10 mxb-0057bd01.gslb.pphosted.com.
+NS : ns-1209.awsdns-23.org.
+NS : ns-1840.awsdns-38.co.uk.
+NS : ns-373.awsdns-46.com.
+NS : ns-843.awsdns-41.net.
+TXT : "ZOOM_verify_0hA3B-bWQJSLBFw2r40Iqw"
+TXT : "adobe-idp-site-verification=b30dda0284a524b1d53a850497d6b732e8a70e2da8df65462213e0e0861e51e8"
+TXT : "atlassian-domain-verification=8olZ45rsKngaOgHw/fpYfBLgo2NyNLVhRwChLkYyY9WiLwsXXoESQYxcr/uv1Z6d"
+TXT : "bitly-verification: b834f672-2916-11eb-8284-080027c1cea9"
+TXT : "docusign=74f0a0b2-8a0a-4e02-87ff-ee5a145bd490"
+TXT : "favro-verification=tlc1HAxJULD-fyDsyWJF0MqHEqSX_Lvoc6rLbzum83m"
+TXT : "google-site-verification=bYsqZHcg_ZO47pRX7ledpDQJAMc0M9kryUeSboGgaD0"
+TXT : "h1-domain-verification=yWLXM43PocguXx9F8LjLN7jrS6m3uEoBQJGcZSK3QqtrcRD1"
+TXT : "https://issues.sonatype.org/browse/OSSRH-46362"
+TXT : "janSzunIbfJumEYOqSB7JmH_"
+TXT : "onetrust-domain-verification=787bdfd14caa473da71f185003f4f197"
+TXT : "v=spf1 include:_netblocks.google.com include:_netblocks2.google.com include:_netblocks3.google.com include:mailgun.org include:spf.mandrillapp.com include:_spf.salesforce.com include:spf-0057bd01.pphosted.com ~all"
+SOA : ns-373.awsdns-46.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400

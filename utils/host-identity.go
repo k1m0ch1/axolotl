@@ -1,9 +1,10 @@
-package main
+package utils
 
 type HostIdentity struct{
 	ID string `yaml:"id"`
 	Info HostInfo `yaml:"info"`
 	Recons []Recon `yaml:"recons"`
+	VulnScans []VulnScan `yaml:"vuln-scans"`
 }
 
 type Image struct {
@@ -17,7 +18,16 @@ type Recon struct {
 	Report string `yaml:"report"`
 	FileType string `yaml:"file-type"` // STDOUT, YAML, XML, JSON
 	Desc string `yaml:"desc"`
-	Images Image `yaml:"images"`
+	Images []Image `yaml:"images"`
+}
+
+type VulnScan struct {
+	Tools string `yaml:"tools"`
+	Type string `yaml:"type"`
+	Report string `yaml:"report"`
+	FileType string `yaml:"file-type"` // STDOUT, YAML, XML, JSON
+	Desc string `yaml:"desc"`
+	Images []Image `yaml:"images"`
 }
 
 type Other struct{
@@ -37,4 +47,5 @@ type HostInfo struct {
 	City string `yaml:"city"`
 	Organization string `yaml:"organization"`
 	Others []Other `yaml:"others"`
+	Desc string `yaml:"desc"`
 }

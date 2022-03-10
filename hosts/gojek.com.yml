@@ -1,5 +1,42 @@
-target:
+id: gojek.com
+
+info:
   url: gojek.com
-  tech-stack: django cms, postgresql, alpine.js:2.7.0, nginx, python, HAproxy
-  open-port: 80/http, 443/https
+  tech-stacks: django cms, postgresql, alpine.js:2.7.0, nginx, python, HAproxy
+  tag: anything
+  open-ports: 80/http, 443/https
   host-ip: 104.155.199.9
+  country: Indonesia
+  city: jakarta
+  organization: PT ANAK BANGSA
+  others:
+    - source: twitter
+      desc: Gojek indonesia
+      url: https://twitter.com/gojekindonesia?lang=en
+    - source: crunchbase
+      desc: Gojek valuasi
+      url: https://www.crunchbase.com/organization/go-jek
+
+recons:
+  - tools: nmap
+    type: scanning
+    report: report/nmap/gojek.com.txt
+  - tools: theHarvester
+    type: OSINT
+    report: report/theHarvester/gojek.com.txt
+  - tools: github
+    url: https://github.com/namdevel/gopay-api
+    type: api-wrapper
+    desc: someone reverse the gopay app
+  - tools: subdomain shodan
+    type: subdomain
+    url: https://beta.shodan.io/domain/gojek.com
+    desc: list subdomain from shodan
+  - tools: DNS Lookup
+    type: dns-lookup
+    report: report/dns-lookup/gojek.com.txt
+
+vuln-scans:
+  - tools: burp
+    type: scanning
+    report: lol.txt
