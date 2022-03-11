@@ -5,6 +5,8 @@ import(
 	"log"
 	"fmt"
 	"flag"
+	"bufio"
+	"unicode"
 	
 	utils "github.com/k1m0ch1/axolotl/utils"
 )
@@ -18,8 +20,6 @@ func main(){
 	for _, f := range HostFile {
 		var h utils.HostIdentity
 		h.Load(f)
-		// fmt.Printf("\nHost: %s", h.Info.URL)
-		// fmt.Printf("\nTechStack: %s\n", h.Info.TechStacks)
 	}
 
 	VulnFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.VulnDir), "*.yml")
@@ -40,12 +40,40 @@ func main(){
 
 	flag.Parse()
 
-	if len(flag.Args()) == 0 {
+	if *hostArg == "" && *vulnArg == "" {
 		fmt.Println("\ntype -h to see the available commands")
 	}
 
 	if *insertArg == true{
 		*searchArg = false
+
+		if *hostArg != "" {
+			pathDir := fmt.Sprintf("./%s/%s.yml", cfg.DirConfig.HostsIdentityDir, *hostArg)
+			if _, err := os.Stat(pathDir); os.IsNotExist(err) {
+
+				GenerateHost := cfg.GenerateHost(*hostArg)
+				if GenerateHost != nil {
+					log.Fatal(err)
+				}
+				fmt.Printf("\n[+] Host %s is Created at ./%s", *hostArg, cfg.DirConfig.HostsIdentityDir)
+			}else{
+				fmt.Printf("\n[?] Warning! Host Identity for %s is already exist at ./%s\n", *hostArg, cfg.DirConfig.HostsIdentityDir)
+				reader := bufio.NewReader(os.Stdin)
+				fmt.Printf("Are you sure you want to replace the current Host Identity %s (y/N): ", *hostArg)
+				text, _, _ := reader.ReadRune()
+				resultText := fmt.Sprintf("%c", unicode.ToLower(text))
+				if resultText == "n" {
+					
+				}else if resultText == "y" {
+					GenerateHost := cfg.GenerateHost(*hostArg)
+					if GenerateHost != nil {
+						log.Fatal(err)
+					}
+					fmt.Printf("\n[+] Host %s is Created at ./%s", *hostArg, cfg.DirConfig.HostsIdentityDir)
+				}
+			}
+		}
+
 		if *vulnArg != "" && *hostArg == "" {
 			fmt.Println("you must add hostname to create vulnerability record")
 		}else if *vulnArg != "" && *hostArg != "" {
@@ -60,11 +88,6 @@ func main(){
 			fmt.Printf("\n[+] File %s.yml is generated at ./%s, Happy Hacking!", *vulnArg, cfg.DirConfig.VulnDir)
 		}
 	}
-
-	// GenerateHost := cfg.GenerateHost("mantap.com")
-	// if GenerateHost != nil {
-	// 	log.Fatal(err)
-	// }
 
 	fmt.Println("\n\nBye!\n")
 }
