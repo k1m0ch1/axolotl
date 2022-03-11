@@ -18,6 +18,14 @@ v0.1.0
 
 [X] Generate Template Vuln
 
+[] find with tag
+
+[] find with port
+
+[] find with IP
+
+[] find with vuln type
+
 [] Simple Statistic Vulnerability found by the host target
 
 [] Create `new host <domain>` command to create a template
