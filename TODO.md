@@ -1,5 +1,7 @@
 # Todo
 
+v0.1.0
+
 [X] make a simple host identity
 
 [X] YML parse host identity
@@ -10,18 +12,18 @@
 
 [X] YML parse vulnerability identity
 
-[] structure directory
-
-[] Find Host by the value of the key tech-stack, open-port, IP
+[X] Find Host by the value of the key tech-stack
 
 [X] Generate Template Host
 
-[] Generate Template Vuln
-
-[] Generate Template Config
-
-v0.1.0
+[X] Generate Template Vuln
 
 [] Simple Statistic Vulnerability found by the host target
 
 [] Create `new host <domain>` command to create a template
+
+[] project start command
+
+[] Generate Template Config
+
+[] structure directory generate

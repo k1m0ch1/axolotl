@@ -6,6 +6,7 @@ import(
 	"fmt"
 	"flag"
 	"bufio"
+	"strings"
 	"unicode"
 	
 	utils "github.com/k1m0ch1/axolotl/utils"
@@ -17,6 +18,9 @@ func main(){
 	cfg.Load("config.yml")
 
 	HostFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.HostsIdentityDir), "*.yml")
+	if err != nil {
+		log.Fatal(err)
+	}
 	for _, f := range HostFile {
 		var h utils.HostIdentity
 		h.Load(f)
@@ -35,13 +39,41 @@ func main(){
 
 	insertArg := flag.Bool("i", false, "Insert Mode")
 	searchArg := flag.Bool("s", true, "Search Mode")
+	techStackArg := flag.String("ts", "python", "Tech Stack to search")
 	hostArg := flag.String("host", "", "Hostname")
 	vulnArg := flag.String("vn", "", "Attack name or vulnerability name")
 
 	flag.Parse()
 
-	if *hostArg == "" && *vulnArg == "" {
+	if *hostArg == "" && *vulnArg == "" && *techStackArg == "" {
 		fmt.Println("\ntype -h to see the available commands")
+	}
+
+	if *searchArg == true {
+		HostFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.HostsIdentityDir), "*.yml")
+		if err != nil {
+			log.Fatal(err)
+		}
+		found := 0
+		for _, f := range HostFile {
+			var h utils.HostIdentity
+			h.Load(f)
+			ListStacksRaw := strings.ReplaceAll(h.Info.TechStacks, " ", "")
+			ListStacks := strings.Split(ListStacksRaw, ",")
+			for _, f := range ListStacks {
+				tSA := *techStackArg
+				if strings.Contains(tSA, ":") == true {
+					parseLagi := strings.Split(ListStacksRaw, ",")
+					tSA = parseLagi[0]
+				}
+				if f == tSA {
+					fmt.Printf("\n[w00t] %s is used %s stack", h.ID, f)
+					found = found + 1
+				}
+			}
+		}
+
+		fmt.Printf("\n\n%d Result", found)
 	}
 
 	if *insertArg == true{
