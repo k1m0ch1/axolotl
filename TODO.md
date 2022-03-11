@@ -18,7 +18,7 @@ v0.1.0-beta
 
 [X] Generate Template Vuln
 
-[] find with tag
+[X] find with tag
 
 [] find with port
 

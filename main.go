@@ -44,11 +44,11 @@ func main(){
 	searchArg := flag.Bool("s", false, "Search Mode")
 	techStackArg := flag.String("ts", "", "Tech Stack to search")
 	tagsArg := flag.String("tag", "", "Tag to search")
+	portArg := flag.String("port", "", "Port to search")
 	
-
 	flag.Parse()
 
-	if *hostArg == "" && *vulnArg == "" && *techStackArg == "" {
+	if *insertArg == false && *searchArg == false {
 		fmt.Println("\ntype -h to see the available commands")
 	}
 
@@ -86,6 +86,20 @@ func main(){
 						fmt.Printf("\n[w00t] %s is have %s tag", h.ID, f)
 						found = found + 1
 					}
+				}
+			}
+
+			if *portArg != "" {
+				ListPortRaw := strings.ReplaceAll(h.Info.OpenPorts, " ", "")
+				ListPorts := strings.Split(ListPortRaw, ",")
+				for _, f := range ListPorts {
+					splitPorts := strings.Split(f, "/")
+					for _, p := range splitPorts {
+						if p == *portArg {
+							fmt.Printf("\n[w00t] %s is have %s port", h.ID, p)
+							found = found + 1
+						}
+					}					
 				}
 			}
 		}
