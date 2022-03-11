@@ -53,11 +53,32 @@ func main(){
 	}
 
 	if *searchArg == true {
+		found := 0
+		if *vulnArg != "" {
+			VulnFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.VulnDir), "*.yml")
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			for _, f := range VulnFile {
+				var v utils.Finding
+				v.Load(f)
+				ListVulnRaw := strings.ReplaceAll(v.VulnInfo.VulnType, " ", "")
+				ListVulns := strings.Split(ListVulnRaw, ",")
+				for _, f := range ListVulns {
+					if f == *vulnArg {
+						fmt.Printf("\n[w00t] %s is have %s vuln type with finding %s", v.VulnInfo.Domain, *vulnArg, v.ID)
+						found = found + 1
+					}					
+				}
+			}
+		}
+
 		HostFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.HostsIdentityDir), "*.yml")
 		if err != nil {
 			log.Fatal(err)
 		}
-		found := 0
+		
 		for _, f := range HostFile {
 			var h utils.HostIdentity
 			h.Load(f)

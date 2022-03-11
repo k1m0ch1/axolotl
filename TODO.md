@@ -20,15 +20,17 @@ v0.1.0-beta
 
 [X] find with tag
 
-[] find with port
+[X] find with port
 
-[] find with IP
+[] find with IP, core purpose ?
 
-[] find with vuln type
+[X] find with vuln type
 
 [] Simple Statistic Vulnerability found by the host target
 
-[] Create `new host <domain>` command to create a template
+[] Simple report defined by host
+
+[X] Create `new host <domain>` command to create a template
 
 [] project start command
 

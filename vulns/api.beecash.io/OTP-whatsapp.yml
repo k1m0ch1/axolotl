@@ -1,0 +1,34 @@
+id: OTP-whatsapp
+
+info:
+  finding-name: Sent OTP Whatsapp
+  url: https://api.beecash.io/graphql
+  domain: api.beecash.io
+  author: k1m0ch1
+  tags: graphql
+  vuln-type: idor, inject
+  risk-ratings:
+    severity: medium
+    cvss-vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+
+poc:
+- path: https://api.beecash.io/graphql
+  steps-to-reproduce:
+  - desc: just run the payload with change the phone number
+    images:
+    - path: poc/api.beecash.io/poc-wa-1.png
+      caption: you can run this payload by change the pone number
+  images:
+  - path: poc/api.beecash.io/poc-wa-2.png
+    caption: the wa is working
+  exploit: poc/api.beecash.io/OTP-whatsapp.sh
+
+how-to-fix:
+- info: just implement Rate Limit
+  desc: ""
+  url: ""
+  steps-to-fix:
+  - desc: ""
+    images:
+    - path: ""
+      caption: ""

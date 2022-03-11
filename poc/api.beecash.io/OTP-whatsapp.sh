@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -s -X POST -H "Content-Type:application/json" -d '{"operationName":"SendOtpMutation","variables":{"input":{"mobile":"'$number'","purpose":"AUTH","mode":"WHATSAPP","skipBusinessCreation":true},"key":"a55e5351-d70a-44a5-b219-908b58a90c75"},"query":"mutation SendOtpMutation($input: SendOtpInput!) {\n  sendOtp(input: $input) {\n    success\n    __typename\n  }\n}\n"}' "https://api.beecash.io/graphql" | jq -r .data.sendOtp.success

@@ -1,14 +1,16 @@
 id: url-slug-name-vuln-with-version
 
 info:
-  finding-name: Name of the Vulnerability
-  url: https://gojek.co.id.com.lalala
+  finding-name: Can get Access with IDOR
+  url: https://gojek.cm
+  domain: gojek.com
   author: person1, person2
   email: person1@efishery.com, person2@efishery.com
   tags: tag,vulnerability,list
   from: internal/eksternal team
   report-template: default-with-file-name.md
   external-report: file.docx
+  vuln-type: idor
   risk-ratings:
     severity: high
     cvss-vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
@@ -25,7 +27,9 @@ poc:
         images:
           - path:
             desc:
-    images: file.png
+    images:
+      - path:
+        desc:
     nuclei: file.template
     exploit: exploit.sh
     desc: lalala
@@ -39,7 +43,9 @@ poc:
         images:
           - path:
             desc:
-    images: file.png
+    images:
+      - path:
+        desc:
     nuclei: file.template
     exploit: exploit.sh
 
@@ -56,50 +62,3 @@ how-to-fix:
         images:
           - path:
             desc:
-    image:
-
-status: 
-  created:
-    - by:
-      time:
-      desc:
-  reviewed:
-    - by:
-      time:
-      desc:
-  reported:
-    - by:
-      time:
-      desc:
-  approved:
-    - by:
-      time:
-      desc:
-  fixed:
-    - by:
-      time:
-      desc:
-  validated:
-    - by:
-      time:
-      desc:
-  duplicated:
-    - by:
-      time:
-      desc:
-  hold:
-    - by:
-      time:
-      desc:
-  rejected:
-    - by:
-      time:
-      desc:
-  closed:
-    - by:
-      time:
-      desc:
-  completed:
-    - by:
-      time:
-      desc:
