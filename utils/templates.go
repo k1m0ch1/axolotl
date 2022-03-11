@@ -3,6 +3,7 @@ package utils
 import (
 	"os"
 	"fmt"
+	"log"
 
 	yaml "github.com/goccy/go-yaml"
 )
@@ -69,10 +70,106 @@ func (cfg *UserConfig) GenerateHost(host string) error{
 
 func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 	var f Finding
+
+	defaultVulnInfo := VulnInfo{
+		FindingName: "",
+		URL: host,
+		Author: "",
+		Team: "",
+		Email: "",
+		Tags: "",
+		ReportTemplate: "",
+		EksternalReport: "",
+		RiskRatings: RiskRating{
+			Severity: "",
+			CVSS: "",
+			OWASP: "",
+		},
+	}
+
+	defaultPoC := []ProofOfConcept{
+		ProofOfConcept{
+			Path: "",
+			StepsToReproduce: []Step{
+				Step{
+					Desc: "",
+					Images: []Image{
+						Image{
+							Path: "",
+							Caption: "",
+						},
+					},
+				},
+			},
+			Images: []Image{
+				Image{
+					Path: "",
+					Caption: "",
+				},
+			},
+			NucleiTemplate: "",
+			Exploit: "",
+			Desc: "",
+		},
+	}
+
+	defaultHTF := []HowToFix{
+		HowToFix{
+			Information: "",
+			Desc: "",
+			URL: "",
+			StepsToFix: []Step{
+				Step{
+					Desc: "",
+					Images: []Image{
+						Image{
+							Path: "",
+							Caption: "",
+						},
+					},
+				},
+			},
+		},
+	}
+
+	defaultStatusField := StatusFields{
+		By: "",
+		Time: "",
+		Desc: "",
+	}
+
+	defaultStatus := Status{
+		Created: defaultStatusField,
+		Reviewed: defaultStatusField,
+		Reported: defaultStatusField,
+		Approved: defaultStatusField,
+		Fixed: defaultStatusField,
+		Validated: defaultStatusField,
+		Duplicated: defaultStatusField,
+		Hold: defaultStatusField,
+		Rejected: defaultStatusField,
+		Closed: defaultStatusField,
+		Completed: defaultStatusField,
+	}
+
+	f.ID = nameVuln
+	f.VulnInfo = defaultVulnInfo
+	f.ProofOfConcept = defaultPoC
+	f.HowToFix = defaultHTF
+	f.Status = defaultStatus
+
     bytes, err := yaml.Marshal(f)
 	if err != nil {
 		return err
 	}
+	pathDir := fmt.Sprintf("./%s/%s", cfg.DirConfig.VulnDir, host)
+	if _, err := os.Stat(pathDir); os.IsNotExist(err) {
+		err := os.Mkdir(pathDir, 644)
+		if err != nil {
+			return err
+		}
+	}
+
 	err = os.WriteFile(fmt.Sprintf("./%s/%s/%s.yml", cfg.DirConfig.VulnDir, host, nameVuln), bytes, 0644)
 	if err != nil {
 		return err

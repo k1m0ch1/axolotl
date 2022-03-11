@@ -3,7 +3,6 @@ package utils
 import(
 	"os"
 	"log"
-	"fmt"
 	"io/ioutil"
 	"path/filepath"
 
