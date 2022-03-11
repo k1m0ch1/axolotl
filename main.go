@@ -38,8 +38,8 @@ func main(){
 	fmt.Printf("\n==================================\n")
 
 	insertArg := flag.Bool("i", false, "Insert Mode")
-	searchArg := flag.Bool("s", true, "Search Mode")
-	techStackArg := flag.String("ts", "python", "Tech Stack to search")
+	searchArg := flag.Bool("s", false, "Search Mode")
+	techStackArg := flag.String("ts", "nothing", "Tech Stack to search")
 	hostArg := flag.String("host", "", "Hostname")
 	vulnArg := flag.String("vn", "", "Attack name or vulnerability name")
 
@@ -79,10 +79,9 @@ func main(){
 	if *insertArg == true{
 		*searchArg = false
 
-		if *hostArg != "" {
+		if *hostArg != "" && *vulnArg == "" {
 			pathDir := fmt.Sprintf("./%s/%s.yml", cfg.DirConfig.HostsIdentityDir, *hostArg)
 			if _, err := os.Stat(pathDir); os.IsNotExist(err) {
-
 				GenerateHost := cfg.GenerateHost(*hostArg)
 				if GenerateHost != nil {
 					log.Fatal(err)

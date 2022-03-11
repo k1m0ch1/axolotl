@@ -1,0 +1,537 @@
+
+[93m*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.0.3                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+******************************************************************* 
+
+[0m
+[94m[*] Target: dpr.go.id 
+ [0m
+
+[93m[!] Missing API key for Github. [0m
+
+[93m[!] Missing API key for Spyse. [0m
+
+[93m[!] Missing API key for RocketReach. [0m
+
+[93m[!] Missing API key for Securitytrail. [0m
+
+[93m[!] Missing API key for zoomeye. [0m
+
+[93m[!] Missing API key for ProjectDiscovery. [0m
+
+[93m[!] Missing API key for Intelx. [0m
+
+[93m[!] Missing API key for binaryedge. [0m
+
+[93m[!] Missing API key for Censys ID and/or Secret. [0m
+
+[93m[!] Missing API key for PentestTools. [0m
+
+[93m[!] Missing API key for Hunter. [0m
+
+[93m[!] Missing API key for fullhunt. [0m
+	Searching results.
+[94m[*] Searching Virustotal. [0m
+[94m[*] Searching Hackertarget. [0m
+	Searching 0 results.
+	Searching 0 results.
+[94m[*] Searching Bing. [0m
+[94m[*] Searching Baidu. [0m
+[94m[*] Searching Rapiddns. [0m
+	Searching 100 results.
+[94m[*] Searching Urlscan. [0m
+[94m[*] Searching Otx. [0m
+	Searching 200 results.
+[94m[*] Searching Threatcrowd. [0m
+[94m[*] Searching Bufferoverun. [0m
+	Searching 300 results.
+	Searching 100 results.
+[94m[*] Searching Omnisint. [0m
+	Searching 400 results.
+An exception has occurred: 0, message='Attempt to decode JSON with unexpected mimetype: text/html; charset=iso-8859-1', url=URL('https://api.n45ht.or.id/v1/subdomain-enumeration?domain=dpr.go.id')
+	Searching 200 results.
+	Searching 500 results.
+[94m[*] Searching Google. [0m
+[94m[*] Searching Threatminer. [0m
+	Searching 300 results.
+	Searching 400 results.
+	Searching 500 results.
+[94m[*] Searching Linkedin. [0m
+Google is blocking your ip and the workaround, returning
+[94m[*] Searching Twitter. [0m
+Google is blocking your ip and the workaround, returning
+[94m[*] Searching Dnsdumpster. [0m
+	Searching results.
+[94m[*] Searching Certspotter. [0m
+[94m[*] Searching Anubis. [0m
+[94m[*] Searching CRTsh. [0m
+	Searching 0 results.
+[94m[*] Searching Trello. [0m
+Google is blocking your ip and the workaround, returning
+[94m[*] Searching Sublist3r. [0m
+	Searching 100 results.
+[94m[*] Searching Duckduckgo. [0m
+[94m[*] Searching Qwant. [0m
+Google is blocking your ip and the workaround, returning
+	Searching 200 results.
+Google is blocking your ip and the workaround, returning
+	Searching 300 results.
+Google is blocking your ip and the workaround, returning
+	Searching 400 results.
+Google is blocking your ip and the workaround, returning
+	Searching 500 results.
+[94m[*] Searching Linkedin. [0m
+
+[*] ASNS found: 3
+--------------------
+AS131779
+AS201011
+AS20940
+
+[*] Interesting Urls found: 6
+--------------------
+http://dpr.go.id/
+http://puslit.dpr.go.id/
+http://www.dpr.go.id
+http://www.dpr.go.id/
+http://www.dpr.go.id/berita/detail/id/12289)
+https://www.dpr.go.id/
+
+[*] Twitter Users found: 6
+---------------------
+@Fahrihamzah
+@akuya_aikya
+@fadlizon
+@font
+@keyframes
+@media
+
+[*] No LinkedIn users found.
+
+
+
+[*] LinkedIn Links found: 0
+---------------------
+
+[*] Trello URLs found: 9
+--------------------
+https://trello.com/b/ldchfhwf/pt-digi-board-task
+https://trello.com/b/ldchfhwf/pt-digi-marketing-sales
+https://trello.com/b/ryvnx88z/italy-business-registration
+https://trello.com/b/ued4ifaz/innobesni
+https://trello.com/c/0z3hygc1/2-dasar-dasar-pembelanjaan-perusahaan-bambang-riyanto-pdf
+https://trello.com/c/5ir6ceqt/66-bukunegosiasibisnis23pdf-xenosyusef
+https://trello.com/c/asvschbb/41-dpr-ri-regular-campaign
+https://trello.com/c/fmiuh19v/11-desain-spanduk-ulang-tahun-cdr
+https://trello.com/c/n96f3ts7/14-minggu-9-kelas-b
+
+[*] IPs found: 106
+-------------------
+23.10.240.90
+23.10.240.123
+23.40.205.161
+23.44.205.176
+23.44.205.184
+23.46.148.170
+23.46.148.189
+23.46.148.205
+23.46.149.84
+23.46.149.120
+23.46.149.135
+23.46.149.143
+23.48.94.120
+23.49.57.11
+23.49.57.16
+23.49.57.25
+23.53.122.202
+23.55.168.153
+23.55.221.217
+23.59.188.112
+23.59.190.49
+23.59.190.83
+23.59.190.186
+23.63.79.36
+23.63.79.37
+23.72.224.41
+23.192.230.10
+23.192.230.14
+23.195.105.18
+23.215.105.104
+23.216.145.161
+23.216.147.10
+23.216.147.40
+23.216.147.43
+23.216.147.62
+23.216.147.161
+23.221.223.8
+23.221.223.40
+23.221.223.88
+23.223.52.11
+23.223.52.18
+23.223.53.202
+72.246.56.65
+72.246.56.72
+72.246.57.80
+92.122.122.155
+103.16.220.10
+103.16.220.20
+103.16.220.21
+103.16.220.29
+103.18.181.10
+103.18.181.12
+103.18.181.17
+103.18.181.20
+103.18.181.21
+103.18.181.26
+103.18.181.27
+103.18.181.29
+103.18.181.31
+103.18.181.33
+103.18.181.37
+103.18.181.62
+103.18.181.63
+103.18.181.64
+103.18.181.84
+103.55.38.64
+103.81.132.114
+104.81.60.17
+104.81.60.41
+104.86.110.242
+104.86.111.170
+104.88.206.154
+104.91.166.72
+104.96.203.25
+104.98.114.89
+104.98.114.90
+104.98.118.154
+104.98.118.178
+104.99.238.90
+123.231.238.177
+123.231.238.178
+123.231.238.179
+123.231.238.180
+123.231.238.186
+123.231.238.187
+173.223.239.167
+185.210.146.250
+2a01:4a0:1338:28::c38a:ff09
+2a02:26f0:ef::5c7b:c269
+2a02:26f0:ef::5c7b:c2a2
+2a02:26f0:6c00::210:ba08
+
+[*] Emails found: 14
+----------------------
+ahmad.nugroho@dpr.go.id
+bag_humas@dpr.go.id
+bksap@dpr.go.id
+cucun.syamsurijal@dpr.go.id
+faqih.huda@dpr.go.id
+humas@dpr.go.id
+jurnal_kajian@dpr.go.id
+parlemen.remaja@dpr.go.id
+perpustakaan@dpr.go.id
+ppid@dpr.go.id
+pusdiklat@dpr.go.id
+rosalina@dpr.go.id
+set_komisi1@dpr.go.id
+slamet.widodo@dpr.go.id
+
+[*] Hosts found: 460
+---------------------
+anggota.dpr.go.id:a1943.dscb.akamai.net
+anggota.dpr.go.id:anggota.dpr.go.id.edgesuite.net
+anggota.dpr.go.id:anggota.dpr.go.id.edgesuite.net.
+anggota.dpr.go.id.edgesuite.net.:113.197.109.177, 113.197.109.168
+autodiscover.dpr.go.id:mail.dpr.go.id.
+autodiscover.dpr.go.id:mail.dpr.go.id
+autodiscover.dpr.go.id:mail.dpr.go.id.edgesuite.net
+autodiscover.dpr.go.id:a1902.dscb.akamai.net
+bdti.dpr.go.id:bdti.dpr.go.id.edgesuite.net
+bdti.dpr.go.id:a1988.dscb.akamai.net
+bdti.dpr.go.id:bdti.dpr.go.id.edgesuite.net.
+bdti.dpr.go.id.edgesuite.net.:113.197.109.170, 113.197.109.185
+berkas.dpr.go.id:dprexternal5.dpr.go.id
+berkas.dpr.go.id:a1902.dscb.akamai.net.0.1.cn.akamaitech.net
+berkas.dpr.go.id:a1902.dscb.akamai.net
+berkas.dpr.go.id:113.197.109.168, 113.197.109.184
+berkas.dpr.go.id:berkas.dpr.go.id.edgesuite.net
+berkas.dpr.go.id:113.197.109.184, 113.197.109.168
+berkas.dpr.go.id:berkas.dpr.go.id.edgesuite.net.
+berkas.dpr.go.id.edgesuite.net.:113.197.109.184, 113.197.109.168
+berkascpns.dpr.go.id:berkascpns.dpr.go.id.edgesuite.net
+berkascpns.dpr.go.id:berkascpns.dpr.go.id.edgesuite.net.
+berkascpns.dpr.go.id:a1939.dscb.akamai.net
+berkascpns.dpr.go.id.edgesuite.net.:113.197.109.169, 113.197.109.185
+berkaspansel.dpr.go.id:dprexternal4.dpr.go.id
+bk.dpr.go.id:113.197.109.185, 113.197.109.178
+bk.dpr.go.id:node_protect03.dpr.go.id
+bk.dpr.go.id:bk.dpr.go.id.edgesuite.net.
+bk.dpr.go.id:a1813.dscb.akamai.net
+bk.dpr.go.id:113.197.109.178, 113.197.109.185
+bk.dpr.go.id:bk.dpr.go.id.edgesuite.net
+bk.dpr.go.id.edgesuite.net.:113.197.109.185, 113.197.109.178
+blog.dpr.go.id:blog.dpr.go.id.edgesuite.net
+blog.dpr.go.id:blog.dpr.go.id.edgesuite.net.
+blog.dpr.go.id:a1893.dscb.akamai.net
+blog.dpr.go.id.edgesuite.net.:113.197.109.178, 113.197.109.171
+cloud.dpr.go.id:123.231.238.178
+cloudpath.dpr.go.id:103.16.220.33
+cpns.dpr.go.id:113.197.109.178, 113.197.109.169
+cpns.dpr.go.id:cpns.dpr.go.id.edgesuite.net
+cpns.dpr.go.id:a1951.dscb.akamai.net
+cpns.dpr.go.id:cpns.dpr.go.id.edgesuite.net.
+cpns.dpr.go.id.edgesuite.net.:113.197.109.178, 113.197.109.169
+dc02-dpr-edge01.dpr.go.id:123.231.238.186
+dc02-dpr-edge01.dpr.go.id:103.81.132.119
+dc02-dpr-edge02.dpr.go.id:123.231.238.187
+dc02-dpr-edge02.dpr.go.id:103.81.132.120
+dc02-lpse-web99.dpr.go.id:123.231.238.177
+dc02-lpse-web99.dpr.go.id.:123.231.238.177
+diparlin.dpr.go.id:113.197.109.187, 113.197.109.171
+dpr.go.id:edge01.dpr.go.id
+dpr.go.id:edge02.dpr.go.id
+dpr.go.id:dc02-dpr-edge02.dpr.go.id
+dpr.go.id:dc02-dpr-edge02.dpr.go.id.
+dprexternal1.dpr.go.id:103.16.220.20
+dprexternal1.dpr.go.id:103.18.181.20
+dprexternal1.dpr.go.id.:103.18.181.20
+dprexternal10.dpr.go.id:103.18.181.37
+dprexternal10.dpr.go.id:103.16.220.37
+dprexternal2.dpr.go.id:103.18.181.21
+dprexternal2.dpr.go.id:103.16.220.21
+dprexternal3.dpr.go.id:103.16.220.26
+dprexternal3.dpr.go.id:103.18.181.26
+dprexternal3.dpr.go.id.:103.18.181.26
+dprexternal4.dpr.go.id:103.16.220.27
+dprexternal4.dpr.go.id:103.18.181.27
+dprexternal5.dpr.go.id:103.16.220.29
+dprexternal5.dpr.go.id:103.18.181.29
+dprexternal7.dpr.go.id:103.16.220.31
+dprexternal7.dpr.go.id:103.18.181.31
+dpropac01.dpr.go.id:103.18.181.12
+dpropac01.dpr.go.id:103.16.220.12
+edge01.dpr.go.id:123.231.238.186
+edge02.dpr.go.id:123.231.238.187
+edge02.dpr.go.id.:123.231.238.187
+elit.dpr.go.id:elit.dpr.go.id.edgesuite.net.
+elit.dpr.go.id:dprexternal1.dpr.go.id
+elit.dpr.go.id.edgesuite.net.:113.197.109.178, 113.197.109.186
+emedia.dpr.go.id:185.210.146.250
+epaper.dpr.go.id:dprexternal1.dpr.go.id
+epaper.dpr.go.id:epaper.dpr.go.id.edgesuite.net
+epaper.dpr.go.id:a1874.dscb.akamai.net
+epaper.dpr.go.id:epaper.dpr.go.id.edgesuite.net.
+epaper.dpr.go.id.edgesuite.net.:113.197.109.186, 113.197.109.170
+eprints.dpr.go.id:103.18.181.17
+eprints.dpr.go.id:103.16.220.17
+eprints.dpr.go.id.:103.18.181.17
+fortiweb04.dpr.go.id:103.18.181.84
+fortiweb04.dpr.go.id:103.16.220.84
+humas.dpr.go.id:113.197.109.187, 113.197.109.184
+imap.dpr.go.id:a1902.dscb.akamai.net
+imap.dpr.go.id:mail.dpr.go.id.
+imap.dpr.go.id:mail.dpr.go.id
+ios.dpr.go.id:a1805.dscb.akamai.net
+ios.dpr.go.id:ios.dpr.go.id.edgesuite.net.
+ios.dpr.go.id:ios.dpr.go.id.edgesuite.net
+ios.dpr.go.id.edgesuite.net.:113.197.109.178, 113.197.109.186
+ippp.dpr.go.id:113.197.109.179, 113.197.109.184
+ipu144.dpr.go.id:113.197.109.170, 113.197.109.176
+ipu144.dpr.go.id:113.197.109.176, 113.197.109.170
+ittama.dpr.go.id:ittama.dpr.go.id.edgesuite.net
+ittama.dpr.go.id:ittama.dpr.go.id.edgesuite.net.
+ittama.dpr.go.id:a1965.dscb.akamai.net
+ittama.dpr.go.id:113.197.109.185, 113.197.109.171
+ittama.dpr.go.id.edgesuite.net.:113.197.109.171, 113.197.109.185
+jdih.dpr.go.id:113.197.109.168, 113.197.109.184
+jurnal.dpr.go.id:dprexternal3.dpr.go.id
+jurnal.dpr.go.id:a1880.dscb.akamai.net
+jurnal.dpr.go.id:103.18.181.26
+jurnal.dpr.go.id:jurnal.dpr.go.id.edgesuite.net.
+jurnal.dpr.go.id:jurnal.dpr.go.id.edgesuite.net
+kliping.dpr.go.id:kliping.dpr.go.id.edgesuite.net.
+kliping.dpr.go.id:kliping.dpr.go.id.edgesuite.net
+kliping.dpr.go.id:a1864.dscb.akamai.net
+kliping.dpr.go.id.edgesuite.net.:113.197.109.171, 113.197.109.176
+korpri.dpr.go.id:korpri.dpr.go.id.edgesuite.net
+korpri.dpr.go.id:113.197.109.170, 113.197.109.177
+korpri.dpr.go.id:korpri.dpr.go.id.edgesuite.net.
+korpri.dpr.go.id:a1958.dscb.akamai.net
+korpri.dpr.go.id.edgesuite.net.:113.197.109.177, 113.197.109.170
+ksap.dpr.go.id:113.197.109.168, 113.197.109.187
+ksap.dpr.go.id:ksap.dpr.go.id.edgesuite.net.
+ksap.dpr.go.id:ksap.dpr.go.id.edgesuite.net
+ksap.dpr.go.id:a1830.dscb.akamai.net
+ksap.dpr.go.id:node_protect04.dpr.go.id
+ksap.dpr.go.id.edgesuite.net.:113.197.109.187, 113.197.109.168
+lpse.dpr.go.id:123.231.238.177
+lpse.dpr.go.id:dc02-lpse-web99.dpr.go.id
+lpse.dpr.go.id:dc02-lpse-web99.dpr.go.id.
+m.dpr.go.id
+mail.dpr.go.id:113.197.109.184, 113.197.109.168
+mail.dpr.go.id:mail.dpr.go.id.edgesuite.net
+mail.dpr.go.id:113.197.109.168, 113.197.109.184
+mail.dpr.go.id:103.78.26.87
+mail.dpr.go.id:origin-mail.dpr.go.id.
+mail.dpr.go.id:a1902.dscb.akamai.net
+mail.dpr.go.id.:113.197.109.168, 113.197.109.184
+mail.dpr.go.id.edgesuite.net.:113.197.109.168, 113.197.109.184
+monitoring.dpr.go.id:103.16.220.88
+monitoring.dpr.go.id
+museum.dpr.go.id:113.197.109.170, 113.197.109.184
+node_protect02.dpr.go.id:103.18.181.62
+node_protect03.dpr.go.id:103.18.181.63
+node_protect04.dpr.go.id:103.16.220.64
+node_protect04.dpr.go.id:103.18.181.64
+opac.dpr.go.id:opac.dpr.go.id.edgesuite.net
+opac.dpr.go.id:opac.dpr.go.id.edgesuite.net.
+opac.dpr.go.id:a1976.dscb.akamai.net
+opac.dpr.go.id.edgesuite.net.:113.197.109.170, 113.197.109.169
+origin-mail.dpr.go.id:123.231.238.179
+origin-mail.dpr.go.id:123.231.238.180
+origin-mail.dpr.go.id:123.231.238.179, 123.231.238.180
+pansel.dpr.go.id
+pansel.dpr.go.id:pansel.dpr.go.id.edgesuite.net
+pansel.dpr.go.id:a1817.dscb.akamai.net
+parlemenremaja.dpr.go.id:a1873.dscb.akamai.net
+parlemenremaja.dpr.go.id:parlemenremaja.dpr.go.id.edgesuite.net.
+parlemenremaja.dpr.go.id:parlemenremaja.dpr.go.id.edgesuite.net
+parlemenremaja.dpr.go.id:113.197.109.168, 113.197.109.169
+parlemenremaja.dpr.go.id.edgesuite.net.:113.197.109.169, 113.197.109.168
+pengaduan.dpr.go.id:113.197.109.169, 113.197.109.171
+pengaduan.dpr.go.id:pengaduan.dpr.go.id.edgesuite.net
+pengaduan.dpr.go.id:a1844.dscb.akamai.net
+pengaduan.dpr.go.id:pengaduan.dpr.go.id-v2.edgesuite.net.
+pengaduan.dpr.go.id:a1357.dscb.akamai.net
+pengaduan.dpr.go.id:113.197.109.171, 113.197.109.169
+pengaduan.dpr.go.id:pengaduan.dpr.go.id-v2.edgesuite.net
+pengaduan.dpr.go.id:dprexternal2.dpr.go.id
+pengaduan.dpr.go.id-v2.edgesuite.net.:113.197.109.169, 113.197.109.171
+pengkajian.dpr.go.id:pengkajian.dpr.go.id.edgesuite.net.
+pengkajian.dpr.go.id:a1836.dscb.akamai.net
+pengkajian.dpr.go.id:a1836.dscb.akamai.net.0.1.cn.akamaitech.net
+pengkajian.dpr.go.id:pengkajian.dpr.go.id.edgesuite.net
+pengkajian.dpr.go.id.edgesuite.net.:113.197.109.184, 113.197.109.187
+perpustakaan.dpr.go.id:a1913.b.akamai.net
+perpustakaan.dpr.go.id:113.197.109.184, 113.197.109.187
+perpustakaan.dpr.go.id:perpustakaan.dpr.go.id.edgesuite.net
+perpustakaan.dpr.go.id:113.197.109.187, 113.197.109.184
+perpustakaan.dpr.go.id:perpustakaan.dpr.go.id.edgesuite.net.
+perpustakaan.dpr.go.id.edgesuite.net.:113.197.109.187, 113.197.109.184
+poc-cp.dpr.go.id:103.16.220.36
+poc-cp.dpr.go.id
+pop.dpr.go.id:mail.dpr.go.id.edgesuite.net
+pop.dpr.go.id:mail.dpr.go.id.
+pop.dpr.go.id:a1902.dscb.akamai.net
+pop.dpr.go.id:mail.dpr.go.id
+portal.dpr.go.id:a1899.dscb.akamai.net
+portal.dpr.go.id:portal.dpr.go.id.edgesuite.net
+portal.dpr.go.id:dprexternal1.dpr.go.id
+portal.dpr.go.id:103.18.181.20
+portal.dpr.go.id:portal.dpr.go.id.edgesuite.net.
+ppid.dpr.go.id:dprexternal2.dpr.go.id
+ppid.dpr.go.id:113.197.109.168, 113.197.109.177
+ppid.dpr.go.id:a1943.dscb.akamai.net
+ppid.dpr.go.id:ppid.dpr.go.id.edgesuite.net
+ppid.dpr.go.id:113.197.109.177, 113.197.109.168
+ppid.dpr.go.id:ppid.dpr.go.id.edgesuite.net.
+ppid.dpr.go.id.edgesuite.net.:113.197.109.168, 113.197.109.177
+ppnpn.dpr.go.id:ppnpn.dpr.go.id.edgesuite.net
+ppnpn.dpr.go.id:a1991.dscb.akamai.net
+ppnpn.dpr.go.id:113.197.109.184, 113.197.109.177
+pusatpuu.dpr.go.id:pusatpuu.dpr.go.id.edgesuite.net
+pusatpuu.dpr.go.id:pusatpuu.dpr.go.id.edgesuite.net.
+pusatpuu.dpr.go.id:113.197.109.186, 113.197.109.185
+pusatpuu.dpr.go.id:a1855.dscb.akamai.net
+pusatpuu.dpr.go.id.edgesuite.net.:113.197.109.185, 113.197.109.186
+pusdiklat.dpr.go.id:a1951.dscb.akamai.net
+pusdiklat.dpr.go.id:pusdiklat.dpr.go.id.edgesuite.net.
+pusdiklat.dpr.go.id:113.197.109.169, 113.197.109.178
+pusdiklat.dpr.go.id:pusdiklat.dpr.go.id.edgesuite.net
+pusdiklat.dpr.go.id.edgesuite.net.:113.197.109.169, 113.197.109.178
+puskajiakn.dpr.go.id:a1827.dscb.akamai.net
+puskajiakn.dpr.go.id:puskajiakn.dpr.go.id.edgesuite.net.
+puskajiakn.dpr.go.id:113.197.109.179, 113.197.109.171
+puskajiakn.dpr.go.id:puskajiakn.dpr.go.id.edgesuite.net
+puskajiakn.dpr.go.id.edgesuite.net.:113.197.109.171, 113.197.109.179
+puskajianggaran.dpr.go.id:113.197.109.184, 113.197.109.178
+puskajianggaran.dpr.go.id:puskajianggaran.dpr.go.id.edgesuite.net
+puskajianggaran.dpr.go.id:113.197.109.178, 113.197.109.184
+puskajianggaran.dpr.go.id:a1904.dscb.akamai.net
+puskajianggaran.dpr.go.id:puskajianggaran.dpr.go.id.edgesuite.net.
+puskajianggaran.dpr.go.id:a1904.dscb.akamai.net.0.1.cn.akamaitech.net
+puskajianggaran.dpr.go.id.edgesuite.net.:113.197.109.184, 113.197.109.178
+puslit.dpr.go.id:puslit.dpr.go.id.edgesuite.net.
+puslit.dpr.go.id:puslit.dpr.go.id.edgesuite.net
+puslit.dpr.go.id:113.197.109.170, 113.197.109.184
+puslit.dpr.go.id:a1844.dscb.akamai.net
+puslit.dpr.go.id.edgesuite.net.:113.197.109.184, 113.197.109.170
+puspanlakuu.dpr.go.id:113.197.109.171, 113.197.109.169
+puspanlakuu.dpr.go.id:puspanlakuu.dpr.go.id.edgesuite.net
+puspanlakuu.dpr.go.id:puspanlakuu.dpr.go.id.edgesuite.net.
+puspanlakuu.dpr.go.id:a1989.dscb.akamai.net
+puspanlakuu.dpr.go.id:113.197.109.169, 113.197.109.171
+puspanlakuu.dpr.go.id.edgesuite.net.:113.197.109.171, 113.197.109.169
+rb.dpr.go.id:113.197.109.187, 113.197.109.184
+rb.dpr.go.id:113.197.109.184, 113.197.109.187
+repositori.dpr.go.id:103.18.181.17
+repositori.dpr.go.id:eprints.dpr.go.id.
+repositori.dpr.go.id:eprints.dpr.go.id
+rumahaspirasi.dpr.go.id:a1928.dscb.akamai.net
+rumahaspirasi.dpr.go.id:rumahaspirasi.dpr.go.id.edgesuite.net.
+rumahaspirasi.dpr.go.id:113.197.109.184, 113.197.109.170
+rumahaspirasi.dpr.go.id:rumahaspirasi.dpr.go.id.edgesuite.net
+rumahaspirasi.dpr.go.id.edgesuite.net.:113.197.109.170, 113.197.109.184
+sdgs.dpr.go.id:103.55.38.64
+sdip.dpr.go.id:113.197.109.176, 113.197.109.168
+sdip.dpr.go.id:sdip.dpr.go.id.edgesuite.net
+sdip.dpr.go.id:sdip.dpr.go.id.edgesuite.net.
+sdip.dpr.go.id:a1822.dscb.akamai.net
+sdip.dpr.go.id.edgesuite.net.:113.197.109.168, 113.197.109.176
+seapac.dpr.go.id:113.197.109.179, 113.197.109.176
+sejati.dpr.go.id:113.197.109.176, 113.197.109.177
+siap.dpr.go.id:113.197.109.187, 113.197.109.169
+sigertak.dpr.go.id:113.197.109.169, 113.197.109.170
+silompat.dpr.go.id:113.197.109.179, 113.197.109.170
+simawas.dpr.go.id:113.197.109.168, 113.197.109.176
+sipinter.dpr.go.id:113.197.109.187, 113.197.109.176
+sirajin.dpr.go.id:113.197.109.186, 113.197.109.177
+sirajin1.dpr.go.id:103.18.181.41
+sirajin2.dpr.go.id:103.18.181.42
+sirajin3.dpr.go.id:103.18.181.43
+sirajinppnasn1.dpr.go.id:103.18.181.44
+sitanang.dpr.go.id:113.197.109.177, 113.197.109.168
+smtp.dpr.go.id:edge02.dpr.go.id
+smtp.dpr.go.id:123.231.238.186
+smtp.dpr.go.id:edge01.dpr.go.id
+smtp.dpr.go.id:edge01.dpr.go.id.
+statik.dpr.go.id:113.197.109.186, 113.197.109.187
+statik.dpr.go.id:statik.dpr.go.id.edgesuite.net
+statik.dpr.go.id:113.197.109.187, 113.197.109.186
+statik.dpr.go.id:statik.dpr.go.id.edgesuite.net.
+statik.dpr.go.id:a1919.dscb.akamai.net
+statik.dpr.go.id.edgesuite.net.:113.197.109.186, 113.197.109.187
+streaming.dpr.go.id:103.18.181.20
+streaming.dpr.go.id:dprexternal1.dpr.go.id
+tvr.dpr.go.id:113.197.109.169, 113.197.109.187
+tvr.dpr.go.id:dprexternal2.dpr.go.id
+tvr.dpr.go.id:tvr.dpr.go.id.edgesuite.net.
+tvr.dpr.go.id.edgesuite.net.:113.197.109.187, 113.197.109.169
+vpn.dpr.go.id:103.18.181.33
+www.dpr.go.id:a1974.dscb.akamai.net
+www.dpr.go.id:113.197.109.168, 113.197.109.169
+www.dpr.go.id:www.dpr.go.id.edgesuite.net
+www.dpr.go.id:103.16.220.10
+www.dpr.go.id:113.197.109.169, 113.197.109.168
+www.mail.dpr.go.id
+yankes.dpr.go.id:113.197.109.170, 113.197.109.178

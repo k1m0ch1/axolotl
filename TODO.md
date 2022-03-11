@@ -1,6 +1,6 @@
 # Todo
 
-v0.1.0
+v0.1.0-beta
 
 [X] make a simple host identity
 
@@ -35,3 +35,5 @@ v0.1.0
 [] Generate Template Config
 
 [] structure directory generate
+
+[] clean up README
