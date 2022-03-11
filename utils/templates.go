@@ -11,12 +11,24 @@ import (
 func (cfg *UserConfig) GenerateHost(host string) error{
 	var h HostIdentity
 
-	defaultOthers := []Other{
-		Other{
-			Source: "",
-			Desc: "",
-			URL: "",
+	defaultHostInfo := HostInfo{
+		URL: host,
+		TechStacks: "",
+		Tag: "",
+		OpenPorts: "",
+		FilteredPort: "",
+		HostIP: "",
+		Country: "",
+		City: "",
+		Organization: "",
+		Others: []Other{
+			Other{
+				Source: "",
+				Desc: "",
+				URL: "",
+			},
 		},
+		Desc: "",
 	}
 
 	defaultRecons := []Recon{
@@ -52,7 +64,7 @@ func (cfg *UserConfig) GenerateHost(host string) error{
 	}
 
 	h.ID = host
-	h.Info.Others = defaultOthers
+	h.Info = defaultHostInfo
 	h.Recons = defaultRecons
 	h.VulnScans = defaultVulnScans
 

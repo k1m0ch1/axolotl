@@ -6,7 +6,7 @@
 
 [X] struct all key variable
 
-[] get some vulnerability
+[X] example vulnerability format
 
 [X] YML parse vulnerability identity
 
