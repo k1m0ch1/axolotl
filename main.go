@@ -38,10 +38,13 @@ func main(){
 	fmt.Printf("\n==================================\n")
 
 	insertArg := flag.Bool("i", false, "Insert Mode")
-	searchArg := flag.Bool("s", false, "Search Mode")
-	techStackArg := flag.String("ts", "nothing", "Tech Stack to search")
 	hostArg := flag.String("host", "", "Hostname")
 	vulnArg := flag.String("vn", "", "Attack name or vulnerability name")
+
+	searchArg := flag.Bool("s", false, "Search Mode")
+	techStackArg := flag.String("ts", "", "Tech Stack to search")
+	tagsArg := flag.String("tag", "", "Tag to search")
+	
 
 	flag.Parse()
 
@@ -58,17 +61,31 @@ func main(){
 		for _, f := range HostFile {
 			var h utils.HostIdentity
 			h.Load(f)
-			ListStacksRaw := strings.ReplaceAll(h.Info.TechStacks, " ", "")
-			ListStacks := strings.Split(ListStacksRaw, ",")
-			for _, f := range ListStacks {
-				tSA := *techStackArg
-				if strings.Contains(tSA, ":") == true {
-					parseLagi := strings.Split(ListStacksRaw, ",")
-					tSA = parseLagi[0]
+			if *techStackArg != "" {
+				ListStacksRaw := strings.ReplaceAll(h.Info.TechStacks, " ", "")
+				ListStacks := strings.Split(ListStacksRaw, ",")
+				for _, f := range ListStacks {
+					tSA := *techStackArg
+					if strings.Contains(tSA, ":") == true {
+						parseLagi := strings.Split(ListStacksRaw, ",")
+						tSA = parseLagi[0]
+					}
+					if f == tSA {
+						fmt.Printf("\n[w00t] %s is used %s stack", h.ID, f)
+						found = found + 1
+					}
 				}
-				if f == tSA {
-					fmt.Printf("\n[w00t] %s is used %s stack", h.ID, f)
-					found = found + 1
+			}
+
+			if *tagsArg != "" {
+				ListTagsRaw := strings.ReplaceAll(h.Info.Tag, " ", "")
+				ListTags := strings.Split(ListTagsRaw, ",")
+				for _, f := range ListTags {
+					tA := *tagsArg
+					if f == tA {
+						fmt.Printf("\n[w00t] %s is have %s tag", h.ID, f)
+						found = found + 1
+					}
 				}
 			}
 		}

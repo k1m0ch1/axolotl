@@ -3,7 +3,7 @@ id: gojek.com
 info:
   url: gojek.com
   tech-stacks: django cms, postgresql, alpine.js:2.7.0, nginx, python, HAproxy
-  tag: anything
+  tag: ecommerce, startup, gopay, bounty
   open-ports: 80/http, 443/https
   host-ip: 104.155.199.9
   country: Indonesia
