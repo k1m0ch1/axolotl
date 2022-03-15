@@ -1,16 +1,19 @@
-id: OTP-whatsapp
-
+id: otp-wa
 info:
   finding-name: Sent OTP Whatsapp
   url: https://api.beecash.io/graphql
   domain: api.beecash.io
   author: k1m0ch1
+  team: ""
+  email: ""
   tags: graphql
   vuln-type: idor, inject
+  report-template: ""
+  external-terport: ""
   risk-ratings:
     severity: medium
     cvss-vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
-
+    owasp-vector: ""
 poc:
 - path: https://api.beecash.io/graphql
   steps-to-reproduce:
@@ -21,8 +24,9 @@ poc:
   images:
   - path: poc/api.beecash.io/poc-wa-2.png
     caption: the wa is working
+  nuclei-template: ""
   exploit: poc/api.beecash.io/OTP-whatsapp.sh
-
+  desc: ""
 how-to-fix:
 - info: just implement Rate Limit
   desc: ""

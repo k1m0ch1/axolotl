@@ -4,6 +4,7 @@ import (
 	"os"
 	"fmt"
 	"log"
+	"time"
 
 	yaml "github.com/goccy/go-yaml"
 )
@@ -189,31 +190,20 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 		},
 	}
 
-	defaultStatusField := StatusFields{
-		By: "",
-		Time: "",
-		Desc: "",
-	}
+	datetime := time.Now()
 
-	defaultStatus := Status{
-		Created: defaultStatusField,
-		Reviewed: defaultStatusField,
-		Reported: defaultStatusField,
-		Approved: defaultStatusField,
-		Fixed: defaultStatusField,
-		Validated: defaultStatusField,
-		Duplicated: defaultStatusField,
-		Hold: defaultStatusField,
-		Rejected: defaultStatusField,
-		Closed: defaultStatusField,
-		Completed: defaultStatusField,
-	}
 
 	f.ID = nameVuln
 	f.VulnInfo = defaultVulnInfo
 	f.ProofOfConcept = defaultPoC
 	f.HowToFix = defaultHTF
-	f.Status = defaultStatus
+	f.Status = Status{
+		Created: StatusFields{
+			By: cfg.ProjectOwner,
+			Time: datetime.Format(time.RFC3339),
+			Desc: "found finding",
+		},
+	}
 
     bytes, err := yaml.Marshal(f)
 	if err != nil {

@@ -36,10 +36,21 @@ func main(){
 	fmt.Printf("\n|| Axolotl ")
 	fmt.Printf("\n|| Ez pentest findings management")
 	fmt.Printf("\n|| %d Host and %d Vuln Available", len(HostFile), len(VulnFile)) 
-	fmt.Printf("\n==================================\n")
+	fmt.Printf("\n==================================\n\n")
 
 	lookupMode := flag.Bool("l", true, "Lookup Mode")
 	insertMode := flag.Bool("i", false, "Insert Mode")
+	createdStamp := flag.Bool("created", false, "timestamp to be created (when the first time you found the vuln")
+	reviewedStamp := flag.Bool("reviewed", false, "timestamp to be reviewed (when you give the finding to review")
+	reportedStamp := flag.Bool("reported", false, "timestamp to be reported (when you send the report to vendor)")
+	approvedStamp := flag.Bool("approved", false, "timestamp to be approved (when the vuln is accepted by the vendor")
+	fixedStamp := flag.Bool("fixed", false, "timestamp to be fixed (when the vuln is fixed by the vendor")
+	validatedStamp := flag.Bool("validated", false, "timestamp to be validated (when the vuln is fixed and validated by bug founder")
+	duplicatedStamp := flag.Bool("duplicated", false, "timestamp to be duplicated (when the vuln is responded duplicate by the vendor")
+	holdStamp := flag.Bool("hold", false, "timestamp to be hold (when the vuln is hold by the vendor")
+	rejectedStamp := flag.Bool("rejected", false, "timestamp to be rejected (when the vuln is rejected by the vendor")
+	closedStamp := flag.Bool("closed", false, "timestamp to be closed (when the vuln is closed or stop without any progress by the vendor")
+	completedStamp := flag.Bool("completed", false, "timestamp to be completed (when the vuln is done and complete")
 
 	hostArg := flag.String("host", "", "Hostname")
 	vulnArg := flag.String("vn", "", "Attack name or vulnerability name")
@@ -51,8 +62,20 @@ func main(){
 	flag.Parse()
 	otherArg := flag.Args()
 
-	if *techStackArg == "" && *tagsArg == "" && *portArg == ""{
-		fmt.Println("add argument -h to see the help command")
+	var looking = []bool{
+		*lookupMode, *insertMode, *createdStamp, *reviewedStamp, *reportedStamp,
+		*approvedStamp, *fixedStamp, *validatedStamp, *duplicatedStamp,
+		*holdStamp, *rejectedStamp, *closedStamp, *completedStamp, 
+	}
+	countTrue := 0
+	for  _, v := range looking {
+		if v == true {
+			countTrue = countTrue + 1
+		}
+	}
+
+	if countTrue > 1 {
+		*lookupMode = false
 	}
 
 	if len(otherArg) > 0 {
@@ -116,79 +139,84 @@ func main(){
 	}
 
 	if *lookupMode == true {
-		found := 0
-		if *vulnArg != "" {
-			VulnFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.VulnDir), "*.yml")
+		
+		if *techStackArg == "" && *tagsArg == "" && *portArg == ""{
+			fmt.Println("add argument -h to see the help command")
+		}else{
+			found := 0
+			if *vulnArg != "" {
+				VulnFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.VulnDir), "*.yml")
+				if err != nil {
+					log.Fatal(err)
+				}
+
+				for _, f := range VulnFile {
+					var v utils.Finding
+					v.Load(f)
+					ListVulnRaw := strings.ReplaceAll(v.VulnInfo.VulnType, " ", "")
+					ListVulns := strings.Split(ListVulnRaw, ",")
+					for _, f := range ListVulns {
+						if f == *vulnArg {
+							fmt.Printf("\n[w00t] %s is have %s vuln type with finding %s", v.VulnInfo.Domain, *vulnArg, v.ID)
+							found = found + 1
+						}					
+					}
+				}
+			}
+
+			HostFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.HostsIdentityDir), "*.yml")
 			if err != nil {
 				log.Fatal(err)
 			}
-
-			for _, f := range VulnFile {
-				var v utils.Finding
-				v.Load(f)
-				ListVulnRaw := strings.ReplaceAll(v.VulnInfo.VulnType, " ", "")
-				ListVulns := strings.Split(ListVulnRaw, ",")
-				for _, f := range ListVulns {
-					if f == *vulnArg {
-						fmt.Printf("\n[w00t] %s is have %s vuln type with finding %s", v.VulnInfo.Domain, *vulnArg, v.ID)
-						found = found + 1
-					}					
-				}
-			}
-		}
-
-		HostFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.HostsIdentityDir), "*.yml")
-		if err != nil {
-			log.Fatal(err)
-		}
-		
-		for _, f := range HostFile {
-			var h utils.HostIdentity
-			h.Load(f)
-			if *techStackArg != "" {
-				ListStacksRaw := strings.ReplaceAll(h.Info.TechStacks, " ", "")
-				ListStacks := strings.Split(ListStacksRaw, ",")
-				for _, f := range ListStacks {
-					tSA := *techStackArg
-					if strings.Contains(tSA, ":") == true {
-						parseLagi := strings.Split(ListStacksRaw, ",")
-						tSA = parseLagi[0]
-					}
-					if f == tSA {
-						fmt.Printf("\n[w00t] %s is used %s stack", h.ID, f)
-						found = found + 1
-					}
-				}
-			}
-
-			if *tagsArg != "" {
-				ListTagsRaw := strings.ReplaceAll(h.Info.Tag, " ", "")
-				ListTags := strings.Split(ListTagsRaw, ",")
-				for _, f := range ListTags {
-					tA := *tagsArg
-					if f == tA {
-						fmt.Printf("\n[w00t] %s is have %s tag", h.ID, f)
-						found = found + 1
-					}
-				}
-			}
-
-			if *portArg != "" {
-				ListPortRaw := strings.ReplaceAll(h.Info.OpenPorts, " ", "")
-				ListPorts := strings.Split(ListPortRaw, ",")
-				for _, f := range ListPorts {
-					splitPorts := strings.Split(f, "/")
-					for _, p := range splitPorts {
-						if p == *portArg {
-							fmt.Printf("\n[w00t] %s is have %s port", h.ID, p)
+			
+			for _, f := range HostFile {
+				var h utils.HostIdentity
+				h.Load(f)
+				if *techStackArg != "" {
+					ListStacksRaw := strings.ReplaceAll(h.Info.TechStacks, " ", "")
+					ListStacks := strings.Split(ListStacksRaw, ",")
+					for _, f := range ListStacks {
+						tSA := *techStackArg
+						if strings.Contains(tSA, ":") == true {
+							parseLagi := strings.Split(ListStacksRaw, ",")
+							tSA = parseLagi[0]
+						}
+						if f == tSA {
+							fmt.Printf("\n[w00t] %s is used %s stack", h.ID, f)
 							found = found + 1
 						}
-					}					
+					}
+				}
+
+				if *tagsArg != "" {
+					ListTagsRaw := strings.ReplaceAll(h.Info.Tag, " ", "")
+					ListTags := strings.Split(ListTagsRaw, ",")
+					for _, f := range ListTags {
+						tA := *tagsArg
+						if f == tA {
+							fmt.Printf("\n[w00t] %s is have %s tag", h.ID, f)
+							found = found + 1
+						}
+					}
+				}
+
+				if *portArg != "" {
+					ListPortRaw := strings.ReplaceAll(h.Info.OpenPorts, " ", "")
+					ListPorts := strings.Split(ListPortRaw, ",")
+					for _, f := range ListPorts {
+						splitPorts := strings.Split(f, "/")
+						for _, p := range splitPorts {
+							if p == *portArg {
+								fmt.Printf("\n[w00t] %s is have %s port", h.ID, p)
+								found = found + 1
+							}
+						}					
+					}
 				}
 			}
-		}
 
-		fmt.Printf("\n\n%d Result", found)
+			fmt.Printf("\n\n%d Result", found)
+		}
 	}
 
 	if *insertMode == true{
@@ -232,6 +260,94 @@ func main(){
 				log.Fatal(err)
 			}
 			fmt.Printf("\n[+] File %s.yml is generated at ./%s, Happy Hacking!", *vulnArg, cfg.DirConfig.VulnDir)
+		}
+	}
+
+	if *createdStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("created", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
+		}
+	}
+
+	if *reviewedStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("reviewed", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
+		}
+	}
+
+	if *reportedStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("reported", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
+		}
+	}
+
+	if *approvedStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("approved", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
+		}
+	}
+
+	if *fixedStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("fixed", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
+		}
+	}
+
+	if *validatedStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("validated", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
+		}
+	}
+
+	if *duplicatedStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("duplicated", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
+		}
+	}
+
+	if *holdStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("hold", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
+		}
+	}
+
+	if *rejectedStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("rejected", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
+		}
+	}
+
+	if *closedStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("closed", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
+		}
+	}
+
+	if *completedStamp == true {
+		if *vulnArg != "" && *hostArg != "" {
+			utils.Stamp("completed", cfg, *hostArg, *vulnArg)
+		}else{
+			fmt.Println("[!] Please define -host and -vn")
 		}
 	}
 
