@@ -8,6 +8,51 @@ import (
 	yaml "github.com/goccy/go-yaml"
 )
 
+func (cfg *UserConfig) GenerateConfig(name string) error{
+	var uc UserConfig
+
+	fmt.Println("[?] Generate file Config ./config.yml")
+
+	defaultUserConfig := UserConfig{
+		ProjectOwner : name,
+		Group : "",
+		Teams : []Team{
+			Team{
+				TeamName: "",
+				Members: []Member{
+					Member{
+						MemberName: "",
+						Role: "",
+						Email: "",
+					},
+				},
+			},
+		},
+		Email : "",
+		DirConfig : DirConfig{
+			HostsIdentityDir: "hosts",
+			VulnDir: "vulns",
+			ToolsReports: "reports",
+			PocDir: "poc",
+			OutputReportsDir: "outputs",
+			TemplatesReportDir: "templates",
+		},
+	}
+	uc = defaultUserConfig
+
+	bytes, err := yaml.Marshal(uc)
+	if err != nil {
+		return err
+	}
+
+	err = os.WriteFile("./config.yml", bytes, 0644)
+	if err != nil {
+		return err
+    }
+
+	return nil
+}
+
 func (cfg *UserConfig) GenerateHost(host string) error{
 	var h HostIdentity
 

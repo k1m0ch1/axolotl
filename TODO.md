@@ -32,10 +32,10 @@ v0.1.0-beta
 
 [X] Create `new host <domain>` command to create a template
 
-[] project start command
+[X] project start command
 
-[] Generate Template Config
+[X] Generate Template Config
 
-[] structure directory generate
+[X] structure directory generate
 
 [] clean up README

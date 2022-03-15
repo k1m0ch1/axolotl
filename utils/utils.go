@@ -3,6 +3,7 @@ package utils
 import(
 	"os"
 	"log"
+    "fmt"
 	"io/ioutil"
 	"path/filepath"
 
@@ -65,4 +66,16 @@ func WalkMatch(root, pattern string) ([]string, error) {
         return nil, err
     }
     return matches, nil
+}
+
+func CheckDirAndCreate(paths string) (bool, error) {
+    path := fmt.Sprintf("%s", paths)
+    if _, err := os.Stat(path); os.IsNotExist(err) {
+        fmt.Printf("\n[?] The dir %s is not yet created, I will create this", path)
+        err := os.Mkdir(path, 644)
+        if err != nil {
+            return false, err
+        }
+    }
+    return true, nil
 }

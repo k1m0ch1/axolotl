@@ -4,7 +4,7 @@ type UserConfig struct{
 	ProjectOwner string `yaml:"project-owner"`
 	Group string `yaml:"group"`
 	Teams []Team `yaml:"teams"`
-	email string `yaml:"email"`
+	Email string `yaml:"email"`
 	DirConfig DirConfig `yaml:"dir-config"`
 }
 
