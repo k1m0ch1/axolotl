@@ -2,40 +2,42 @@
 
 v0.1.0-beta
 
-[X] make a simple host identity
+- [X] make a simple host identity
 
-[X] YML parse host identity
+- [X] YML parse host identity
 
-[X] struct all key variable
+- [X] struct all key variable
 
-[X] example vulnerability format
+- [X] example vulnerability format
 
-[X] YML parse vulnerability identity
+- [X] YML parse vulnerability identity
 
-[X] Find Host by the value of the key tech-stack
+- [X] Find Host by the value of the key tech-stack
 
-[X] Generate Template Host
+- [X] Generate Template Host
 
-[X] Generate Template Vuln
+- [X] Generate Template Vuln
 
-[X] find with tag
+- [X] find with tag
 
-[X] find with port
+- [X] find with port
 
-[] find with IP, core purpose ?
+- [] find with IP, core purpose ?
 
-[X] find with vuln type
+- [X] find with vuln type
 
-[] Simple Statistic Vulnerability found by the host target
+- [] Simple Statistic Vulnerability found by the host target
 
-[] Simple report defined by host
+- [] Simple report defined by host
 
-[X] Create `new host <domain>` command to create a template
+- [] Timestamp vuln
 
-[X] project start command
+- [X] Create `new host <domain>` command to create a template
 
-[X] Generate Template Config
+- [X] project start command
 
-[X] structure directory generate
+- [X] Generate Template Config
 
-[] clean up README
+- [X] structure directory generate
+
+- [] clean up README
