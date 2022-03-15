@@ -33,26 +33,24 @@ func main(){
 	
 	fmt.Printf("\n==================================")
 	fmt.Printf("\n|| Axolotl ")
-	fmt.Printf("\n|| Ez pentest documentation")
+	fmt.Printf("\n|| Ez pentest findings management")
 	fmt.Printf("\n|| %d Host and %d Vuln Available", len(HostFile), len(VulnFile)) 
 	fmt.Printf("\n==================================\n")
 
-	insertArg := flag.Bool("i", false, "Insert Mode")
+	lookupMode := flag.Bool("l", false, "Lookup Mode")
+	insertMode := flag.Bool("i", false, "Insert Mode")
+
 	hostArg := flag.String("host", "", "Hostname")
 	vulnArg := flag.String("vn", "", "Attack name or vulnerability name")
 
-	searchArg := flag.Bool("s", false, "Search Mode")
 	techStackArg := flag.String("ts", "", "Tech Stack to search")
 	tagsArg := flag.String("tag", "", "Tag to search")
 	portArg := flag.String("port", "", "Port to search")
-	
+
 	flag.Parse()
+	// otherArg := flag.Args()
 
-	if *insertArg == false && *searchArg == false {
-		fmt.Println("\ntype -h to see the available commands")
-	}
-
-	if *searchArg == true {
+	if *lookupMode == true {
 		found := 0
 		if *vulnArg != "" {
 			VulnFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.VulnDir), "*.yml")
@@ -128,8 +126,8 @@ func main(){
 		fmt.Printf("\n\n%d Result", found)
 	}
 
-	if *insertArg == true{
-		*searchArg = false
+	if *insertMode == true{
+		*lookupMode = false
 
 		if *hostArg != "" && *vulnArg == "" {
 			pathDir := fmt.Sprintf("./%s/%s.yml", cfg.DirConfig.HostsIdentityDir, *hostArg)
