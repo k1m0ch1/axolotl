@@ -1,0 +1,64 @@
+id: hard-bug
+
+info:
+  finding-name: Can get Access with IDOR
+  url: https://gojek.cm
+  domain: tokopedia.com
+  author: person1, person2
+  email: person1@efishery.com, person2@efishery.com
+  tags: tag,vulnerability,list
+  from: internal/eksternal team
+  report-template: default-with-file-name.md
+  external-report: file.docx
+  vuln-type: inject, sqli, xss
+  risk-ratings:
+    severity: high
+    cvss-vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    owasp-vector: (SL:0/M:0/O:0/S:0/ED:0/EE:0/A:0/ID:0/LC:0/LI:0/LAV:0/LAC:0/FD:0/RD:0/NC:0/PV:0)
+
+poc:
+  - path: https://target.com/??adad=asdasd
+    steps-to-reproduce:
+      - desc: first step
+        images: 
+          - path:
+            desc:
+      - desc: second step
+        images:
+          - path:
+            desc:
+    images:
+      - path:
+        desc:
+    nuclei: file.template
+    exploit: exploit.sh
+    desc: lalala
+  - path: https://target.com/??adad=asdasd
+    steps-to-reproduce:
+      - desc: first step
+        images: 
+          - path:
+            desc:
+      - desc: second step
+        images:
+          - path:
+            desc:
+    images:
+      - path:
+        desc:
+    nuclei: file.template
+    exploit: exploit.sh
+
+how-to-fix:
+  - info:
+    desc:
+    url:
+    steps-to-fix:
+      - desc: first step
+        images: 
+          - path:
+            desc:
+      - desc: second step
+        images:
+          - path:
+            desc:

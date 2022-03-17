@@ -113,7 +113,7 @@ func main(){
 								ListOfVuln: []string{v.ID},
 							},
 						)
-					}else{						
+					}else{
 						checkVuln := sort.SearchStrings(vulnTypeStat[currIndex].ListOfVuln, v.ID)
 						if checkVuln >= len(vulnTypeStat[currIndex].ListOfVuln) {
 							vulnTypeStat[currIndex].ListOfVuln = append(vulnTypeStat[currIndex].ListOfVuln, v.ID)

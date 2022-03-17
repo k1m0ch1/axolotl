@@ -197,6 +197,13 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 	f.VulnInfo = defaultVulnInfo
 	f.ProofOfConcept = defaultPoC
 	f.HowToFix = defaultHTF
+	f.Bounty = Bounty{
+		BugLink: "",
+		WriteUp: "",
+		ApprovedScore: "",
+		Reward: "",
+		Desc: "",
+	}
 	f.Status = Status{
 		Created: StatusFields{
 			By: cfg.ProjectOwner,
