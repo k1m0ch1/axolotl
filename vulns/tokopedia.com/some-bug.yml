@@ -1,16 +1,16 @@
-id: idor-to-web
+id: some-bug
 
 info:
   finding-name: Can get Access with IDOR
   url: https://gojek.cm
-  domain: gojek.com
+  domain: tokopedia.com
   author: person1, person2
   email: person1@efishery.com, person2@efishery.com
   tags: tag,vulnerability,list
   from: internal/eksternal team
   report-template: default-with-file-name.md
   external-report: file.docx
-  vuln-type: idor, hack
+  vuln-type: inject, idor
   risk-ratings:
     severity: high
     cvss-vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N

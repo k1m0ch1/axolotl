@@ -5,6 +5,7 @@ import(
 	"log"
 	"fmt"
 	"flag"
+	"sort"
 	"bufio"
 	"errors"
 	"strings"
@@ -59,6 +60,8 @@ func main(){
 	tagsArg := flag.String("tag", "", "Tag to search")
 	portArg := flag.String("port", "", "Port to search")
 
+	haveArg := false
+
 	flag.Parse()
 	otherArg := flag.Args()
 
@@ -79,6 +82,71 @@ func main(){
 	}
 
 	if len(otherArg) > 0 {
+
+		if otherArg[0] == "stat" {
+			// get many vuln-type found
+			VulnFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.VulnDir), "*.yml")
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			var vulnTypeStat []utils.VulnType
+
+			for _, f := range VulnFile {
+				var v utils.Finding
+				v.Load(f)
+				ListVulnRaw := strings.ReplaceAll(v.VulnInfo.VulnType, " ", "")
+				ListVulns := strings.Split(ListVulnRaw, ",")
+				for _, value := range ListVulns {
+					countType := 0
+					currIndex := 999
+					for vulnIndex, vi := range vulnTypeStat {
+						if value == vi.Type {
+							countType = countType + 1
+							currIndex = vulnIndex
+						}
+					}
+					if countType == 0 {
+						vulnTypeStat = append(vulnTypeStat, 
+							utils.VulnType{
+								Type: value,
+								ListOfVuln: []string{v.ID},
+							},
+						)
+					}else{						
+						checkVuln := sort.SearchStrings(vulnTypeStat[currIndex].ListOfVuln, v.ID)
+						if checkVuln >= len(vulnTypeStat[currIndex].ListOfVuln) {
+							vulnTypeStat[currIndex].ListOfVuln = append(vulnTypeStat[currIndex].ListOfVuln, v.ID)
+						}else{
+							if v.ID==vulnTypeStat[currIndex].ListOfVuln[checkVuln] {
+								fmt.Println(v.ID, "Already exist at", vulnTypeStat[currIndex].Type, "with data", vulnTypeStat[currIndex].ListOfVuln, "with index", checkVuln)
+							}else{
+								vulnTypeStat[currIndex].ListOfVuln = append(vulnTypeStat[currIndex].ListOfVuln, v.ID)
+							}
+						}
+						
+					}
+				}
+			}
+
+			fmt.Println("Vulnerability Type")
+			currMin := 0
+			currMax := 0
+			for index, value := range vulnTypeStat{
+				fmt.Printf("\n%s with %d vuln", value.Type, len(value.ListOfVuln))
+				if len(value.ListOfVuln) < len(vulnTypeStat[currMin].ListOfVuln) {
+					currMin = index
+				}
+
+				if len(value.ListOfVuln) > len(vulnTypeStat[currMax].ListOfVuln) {
+					currMax = index
+				}
+			}
+			fmt.Printf("\n")
+			fmt.Printf("\nwith the %s as the most vulnerability you found (%d vuln)", vulnTypeStat[currMax].Type, len(vulnTypeStat[currMax].ListOfVuln))
+			fmt.Printf("\nand %s as the least you found (%d vuln)", vulnTypeStat[currMin].Type, len(vulnTypeStat[currMin].ListOfVuln) )
+		}
+		
 		if otherArg[0] == "init" {
 			fmt.Println("\n[*] Generating new template")
 			if _, err := os.Stat("./config.yml"); err == nil {
@@ -136,11 +204,13 @@ func main(){
 				panic(err)
 			}
 		}
+
+		haveArg = true
 	}
 
-	if *lookupMode == true {
+	if *lookupMode == true && haveArg == false{
 		
-		if *techStackArg == "" && *tagsArg == "" && *portArg == ""{
+		if *techStackArg == "" && *tagsArg == "" && *portArg == "" {
 			fmt.Println("add argument -h to see the help command")
 		}else{
 			found := 0
