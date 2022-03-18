@@ -131,7 +131,8 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 
 	defaultVulnInfo := VulnInfo{
 		FindingName: "",
-		URL: host,
+		URL: "",
+		Domain: host,
 		Author: "",
 		Team: "",
 		Email: "",
@@ -208,7 +209,7 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 		Created: StatusFields{
 			By: cfg.ProjectOwner,
 			Time: datetime.Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Found the Finding",
 		},
 	}
 

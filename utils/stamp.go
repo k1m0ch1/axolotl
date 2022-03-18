@@ -18,7 +18,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Created = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Found the Finding",
 		}
 	}
 
@@ -26,7 +26,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Reviewed = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Finding is Reviewed",
 		}
 	}
 
@@ -34,7 +34,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Reported = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Finding is Reported",
 		}
 	}
 
@@ -42,7 +42,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Approved = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Finding is Approved",
 		}
 	}
 
@@ -50,7 +50,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Fixed = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Finding is Fixed",
 		}
 	}
 
@@ -58,7 +58,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Validated = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Finding is Validated",
 		}
 	}
 
@@ -66,7 +66,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Duplicated = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Finding is Duplicated",
 		}
 	}
 
@@ -74,7 +74,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Hold = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Finding is Hold",
 		}
 	}
 
@@ -82,7 +82,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Rejected = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Finding is Rejected",
 		}
 	}
 
@@ -90,7 +90,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Closed = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Finding is Closed",
 		}
 	}
 
@@ -98,7 +98,7 @@ func Stamp(mode string, cfg UserConfig, host string, vuln string) error{
 		vulns.Status.Completed = StatusFields{
 			By: cfg.ProjectOwner,
 			Time: time.Now().Format(time.RFC3339),
-			Desc: "found finding",
+			Desc: "Finding is Completed",
 		}
 	}
 	

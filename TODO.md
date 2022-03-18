@@ -47,3 +47,9 @@ v0.1.0-beta
 - [X] structure directory generate
 
 - [] clean up README
+
+### Bug
+
+- [] status description
+
+- [] remove empty field
