@@ -46,6 +46,8 @@ v0.1.0-beta
 
 - [X] structure directory generate
 
+- [X] migrate to cobra from flag
+
 - [] clean up README
 
 ### Bug
