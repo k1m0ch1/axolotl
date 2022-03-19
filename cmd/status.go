@@ -20,7 +20,6 @@ func init() {
 	statusCmd.AddCommand(completedCmd)
 }
 
-
 var statusCmd = &cobra.Command{
 	Use:   "status",
 	Short: "Simple stats of the Vulnerabilities",
@@ -28,7 +27,7 @@ var statusCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		var cfg utils.UserConfig
 		cfg.Load("config.yml")
-		
+
 		fmt.Println("WOW")
 	},
 }

@@ -1,10 +1,10 @@
 package utils
 
-type Stats struct{
+type Stats struct {
 	VulnType []VulnType
 }
 
-type VulnType struct{
-	Type string
+type VulnType struct {
+	Type       string
 	ListOfVuln []string
 }

@@ -1,16 +1,16 @@
 package main
 
-import(
-	"os"
+import (
+	"fmt"
 	"log"
-	"fmt"		
-	
+	"os"
+
+	figure "github.com/common-nighthawk/go-figure"
 	cmd "github.com/k1m0ch1/axolotl/cmd"
 	utils "github.com/k1m0ch1/axolotl/utils"
-	figure "github.com/common-nighthawk/go-figure"
 )
 
-func main(){
+func main() {
 
 	var cfg utils.UserConfig
 	cfg.Load("config.yml")
@@ -32,22 +32,19 @@ func main(){
 		log.Fatal(err)
 	}
 
-	if len(os.Args) == 1 || os.Args[0] == "-h"{
+	if len(os.Args) == 1 || os.Args[0] == "-h" {
 		figure.NewFigure("AXOLOTL", "starwars", true).Print()
 		fmt.Printf("\n                    Axolotl - Ez pentest vuln record          ")
 		fmt.Printf("\n                        v%s by k1m0ch1", app.Version)
 		fmt.Printf("\n                      %d Host and %d Vuln Recorded", len(HostFile), len(VulnFile))
-		fmt.Printf("\n                 Info: https://github.com/k1m0ch1/axolotl\n\n") 
-	}else{
+		fmt.Printf("\n                 Info: https://github.com/k1m0ch1/axolotl\n\n")
+	} else {
 		fmt.Printf("\n──────────────────────────────────────")
 		fmt.Printf("\nAxolotl v%s - Ez Vuln Record", app.Version)
 		fmt.Printf("\nhttps://github.com/k1m0ch1/axolotl")
 		fmt.Printf("\n──────────────────────────────────────	\n\n")
 	}
 
-
 	cmd.Execute()
-
-	fmt.Println("\n")
-
+	fmt.Println("")
 }

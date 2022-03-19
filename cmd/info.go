@@ -6,7 +6,7 @@ import (
 	"github.com/k1m0ch1/axolotl/utils"
 	"github.com/spf13/cobra"
 )
-  
+
 var infoCmd = &cobra.Command{
 	Use:   "info",
 	Short: "Information about host or vuln",
@@ -18,7 +18,7 @@ var infoCmd = &cobra.Command{
 		if Domain != "" {
 			var domain utils.HostIdentity
 			domain.Load(fmt.Sprintf("./%s/%s.yml", cfg.DirConfig.HostsIdentityDir, Domain))
-			
+
 			fmt.Printf("Info Result of the Domain `%s`\n\n", Domain)
 			fmt.Println(domain.Info.TechStacks)
 		}

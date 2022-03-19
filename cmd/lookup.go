@@ -9,7 +9,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-
 var lookupCmd = &cobra.Command{
 	Use:   "lookup",
 	Short: "Mode search",
@@ -17,7 +16,7 @@ var lookupCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		var cfg utils.UserConfig
 		cfg.Load("config.yml")
-		
+
 		fmt.Printf("Search Result record with ")
 
 		found := 0
@@ -36,7 +35,7 @@ var lookupCmd = &cobra.Command{
 					if f == Vuln {
 						fmt.Printf("\n[w00t] %s is have %s vuln type with finding %s", v.VulnInfo.Domain, Vuln, v.ID)
 						found = found + 1
-					}					
+					}
 				}
 			}
 		}
@@ -45,7 +44,7 @@ var lookupCmd = &cobra.Command{
 		if err != nil {
 			log.Fatal(err)
 		}
-		
+
 		if TechStacks != "" {
 			fmt.Printf("Technology Stack `%s`:\n", TechStacks)
 		}
@@ -99,7 +98,7 @@ var lookupCmd = &cobra.Command{
 							fmt.Printf("\n[w00t] %s is have %s port", h.ID, p)
 							found = found + 1
 						}
-					}					
+					}
 				}
 			}
 		}
