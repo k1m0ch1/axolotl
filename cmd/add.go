@@ -1,16 +1,16 @@
 package cmd
 
 import (
-	"os"
+	"bufio"
 	"fmt"
 	"log"
-	"bufio"
+	"os"
 	"unicode"
 
 	"github.com/k1m0ch1/axolotl/utils"
 	"github.com/spf13/cobra"
 )
-  
+
 var addCmd = &cobra.Command{
 	Use:   "add",
 	Short: "Add mode you can create new host",
@@ -28,15 +28,15 @@ var addCmd = &cobra.Command{
 					log.Fatal(err)
 				}
 				fmt.Printf("\n[+] Host %s is Created at ./%s", Domain, cfg.DirConfig.HostsIdentityDir)
-			}else{
+			} else {
 				fmt.Printf("\n[?] Warning! Host Identity for %s is already exist at ./%s\n", Domain, cfg.DirConfig.HostsIdentityDir)
 				reader := bufio.NewReader(os.Stdin)
 				fmt.Printf("Are you sure you want to replace the current Host Identity %s (y/N): ", Domain)
 				text, _, _ := reader.ReadRune()
 				resultText := fmt.Sprintf("%c", unicode.ToLower(text))
 				if resultText == "n" {
-					
-				}else if resultText == "y" {
+
+				} else if resultText == "y" {
 					GenerateHost := cfg.GenerateHost(Domain)
 					if GenerateHost != nil {
 						log.Fatal(err)

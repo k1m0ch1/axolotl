@@ -1,14 +1,13 @@
 package cmd
 
 import (
-	"os"
-	"fmt"
 	"errors"
+	"fmt"
+	"os"
 
 	"github.com/k1m0ch1/axolotl/utils"
 	"github.com/spf13/cobra"
 )
-
 
 var initCmd = &cobra.Command{
 	Use:   "init",
@@ -23,14 +22,14 @@ var initCmd = &cobra.Command{
 			fmt.Printf("\n[+] Hi %s", uC.ProjectOwner)
 
 			dirs := []string{
-				uC.DirConfig.HostsIdentityDir, 
+				uC.DirConfig.HostsIdentityDir,
 				uC.DirConfig.VulnDir,
 				uC.DirConfig.ToolsReports,
 				uC.DirConfig.PocDir,
 				uC.DirConfig.OutputReportsDir,
 				uC.DirConfig.TemplatesReportDir,
 			}
-			
+
 			for _, v := range dirs {
 				path := fmt.Sprintf("./%s", v)
 				_, err := utils.CheckDirAndCreate(path)
@@ -48,16 +47,16 @@ var initCmd = &cobra.Command{
 			uC.GenerateConfig(name)
 
 			uC.Load("./config.yml")
-			
+
 			dirs := []string{
-				uC.DirConfig.HostsIdentityDir, 
+				uC.DirConfig.HostsIdentityDir,
 				uC.DirConfig.VulnDir,
 				uC.DirConfig.ToolsReports,
 				uC.DirConfig.PocDir,
 				uC.DirConfig.OutputReportsDir,
 				uC.DirConfig.TemplatesReportDir,
 			}
-			
+
 			for _, v := range dirs {
 				path := fmt.Sprintf("./%s", v)
 				_, err := utils.CheckDirAndCreate(path)

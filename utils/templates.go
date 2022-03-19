@@ -1,41 +1,41 @@
 package utils
 
 import (
-	"os"
 	"fmt"
 	"log"
+	"os"
 	"time"
 
 	yaml "github.com/goccy/go-yaml"
 )
 
-func (cfg *UserConfig) GenerateConfig(name string) error{
+func (cfg *UserConfig) GenerateConfig(name string) error {
 	var uc UserConfig
 
 	fmt.Println("[?] Generate file Config ./config.yml")
 
 	defaultUserConfig := UserConfig{
-		ProjectOwner : name,
-		Group : "",
-		Teams : []Team{
+		ProjectOwner: name,
+		Group:        "",
+		Teams: []Team{
 			Team{
 				TeamName: "",
 				Members: []Member{
 					Member{
 						MemberName: "",
-						Role: "",
-						Email: "",
+						Role:       "",
+						Email:      "",
 					},
 				},
 			},
 		},
-		Email : "",
-		DirConfig : DirConfig{
-			HostsIdentityDir: "hosts",
-			VulnDir: "vulns",
-			ToolsReports: "reports",
-			PocDir: "poc",
-			OutputReportsDir: "outputs",
+		Email: "",
+		DirConfig: DirConfig{
+			HostsIdentityDir:   "hosts",
+			VulnDir:            "vulns",
+			ToolsReports:       "reports",
+			PocDir:             "poc",
+			OutputReportsDir:   "outputs",
 			TemplatesReportDir: "templates",
 		},
 	}
@@ -49,29 +49,29 @@ func (cfg *UserConfig) GenerateConfig(name string) error{
 	err = os.WriteFile("./config.yml", bytes, 0644)
 	if err != nil {
 		return err
-    }
+	}
 
 	return nil
 }
 
-func (cfg *UserConfig) GenerateHost(host string) error{
+func (cfg *UserConfig) GenerateHost(host string) error {
 	var h HostIdentity
 
 	defaultHostInfo := HostInfo{
-		URL: host,
-		TechStacks: "",
-		Tag: "",
-		OpenPorts: "",
+		URL:          host,
+		TechStacks:   "",
+		Tag:          "",
+		OpenPorts:    "",
 		FilteredPort: "",
-		HostIP: "",
-		Country: "",
-		City: "",
+		HostIP:       "",
+		Country:      "",
+		City:         "",
 		Organization: "",
 		Others: []Other{
 			Other{
 				Source: "",
-				Desc: "",
-				URL: "",
+				Desc:   "",
+				URL:    "",
 			},
 		},
 		Desc: "",
@@ -79,14 +79,14 @@ func (cfg *UserConfig) GenerateHost(host string) error{
 
 	defaultRecons := []Recon{
 		Recon{
-			Tools: "",
-			Type: "",
-			Report: "",
+			Tools:    "",
+			Type:     "",
+			Report:   "",
 			FileType: "",
-			Desc: "",
+			Desc:     "",
 			Images: []Image{
 				Image{
-					Path: "",
+					Path:    "",
 					Caption: "",
 				},
 			},
@@ -95,14 +95,14 @@ func (cfg *UserConfig) GenerateHost(host string) error{
 
 	defaultVulnScans := []VulnScan{
 		VulnScan{
-			Tools: "",
-			Type: "",
-			Report: "",
+			Tools:    "",
+			Type:     "",
+			Report:   "",
 			FileType: "",
-			Desc: "",
+			Desc:     "",
 			Images: []Image{
 				Image{
-					Path: "",
+					Path:    "",
 					Caption: "",
 				},
 			},
@@ -114,14 +114,14 @@ func (cfg *UserConfig) GenerateHost(host string) error{
 	h.Recons = defaultRecons
 	h.VulnScans = defaultVulnScans
 
-    bytes, err := yaml.Marshal(h)
+	bytes, err := yaml.Marshal(h)
 	if err != nil {
 		return err
 	}
 	err = os.WriteFile(fmt.Sprintf("./%s/%s.yml", cfg.DirConfig.HostsIdentityDir, host), bytes, 0644)
 	if err != nil {
 		return err
-    }
+	}
 
 	return nil
 }
@@ -130,19 +130,19 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 	var f Finding
 
 	defaultVulnInfo := VulnInfo{
-		FindingName: "",
-		URL: "",
-		Domain: host,
-		Author: "",
-		Team: "",
-		Email: "",
-		Tags: "",
-		ReportTemplate: "",
+		FindingName:     "",
+		URL:             "",
+		Domain:          host,
+		Author:          "",
+		Team:            "",
+		Email:           "",
+		Tags:            "",
+		ReportTemplate:  "",
 		EksternalReport: "",
 		RiskRatings: RiskRating{
 			Severity: "",
-			CVSS: "",
-			OWASP: "",
+			CVSS:     "",
+			OWASP:    "",
 		},
 	}
 
@@ -154,7 +154,7 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 					Desc: "",
 					Images: []Image{
 						Image{
-							Path: "",
+							Path:    "",
 							Caption: "",
 						},
 					},
@@ -162,27 +162,27 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 			},
 			Images: []Image{
 				Image{
-					Path: "",
+					Path:    "",
 					Caption: "",
 				},
 			},
 			NucleiTemplate: "",
-			Exploit: "",
-			Desc: "",
+			Exploit:        "",
+			Desc:           "",
 		},
 	}
 
 	defaultHTF := []HowToFix{
 		HowToFix{
 			Information: "",
-			Desc: "",
-			URL: "",
+			Desc:        "",
+			URL:         "",
 			StepsToFix: []Step{
 				Step{
 					Desc: "",
 					Images: []Image{
 						Image{
-							Path: "",
+							Path:    "",
 							Caption: "",
 						},
 					},
@@ -193,27 +193,26 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 
 	datetime := time.Now()
 
-
 	f.ID = nameVuln
 	f.VulnInfo = defaultVulnInfo
 	f.ProofOfConcept = defaultPoC
 	f.HowToFix = defaultHTF
 	f.Bounty = Bounty{
-		BugLink: "",
-		WriteUp: "",
+		BugLink:       "",
+		WriteUp:       "",
 		ApprovedScore: "",
-		Reward: "",
-		Desc: "",
+		Reward:        "",
+		Desc:          "",
 	}
 	f.Status = Status{
 		Created: StatusFields{
-			By: cfg.ProjectOwner,
+			By:   cfg.ProjectOwner,
 			Time: datetime.Format(time.RFC3339),
 			Desc: "Found the Finding",
 		},
 	}
 
-    bytes, err := yaml.Marshal(f)
+	bytes, err := yaml.Marshal(f)
 	if err != nil {
 		return err
 	}
@@ -228,19 +227,19 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 	err = os.WriteFile(fmt.Sprintf("./%s/%s/%s.yml", cfg.DirConfig.VulnDir, host, nameVuln), bytes, 0644)
 	if err != nil {
 		return err
-    }
+	}
 	return nil
 }
 
 func (cfg *UserConfig) GenerateUserConfig() []byte {
 	var uc UserConfig
-    bytes, err := yaml.Marshal(uc)
+	bytes, err := yaml.Marshal(uc)
 	if err != nil {
 		log.Fatalf("Marshal: %v", err)
 	}
 	err = os.WriteFile("./config.yml", bytes, 0644)
 	if err != nil {
 		log.Printf("err   #%v ", err)
-    }
-    return bytes
+	}
+	return bytes
 }

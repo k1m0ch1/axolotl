@@ -6,10 +6,10 @@ import (
 
 var (
 	Domain     string
-	Vuln	   string
-	TechStacks	   string
-	Tags	   string
-	Ports	   string
+	Vuln       string
+	TechStacks string
+	Tags       string
+	Ports      string
 
 	rootCmd = &cobra.Command{
 		Use:   "axolotl",
@@ -37,4 +37,3 @@ func init() {
 	rootCmd.AddCommand(statusCmd)
 	rootCmd.AddCommand(infoCmd)
 }
-  

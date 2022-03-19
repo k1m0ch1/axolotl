@@ -1,0 +1,17 @@
+project-owner: test
+group: ""
+teams:
+- team-name: ""
+  members:
+  - name: ""
+    role: ""
+    email: ""
+  desc: ""
+email: ""
+dir-config:
+  hosts-identity-dir: hosts
+  vuln-dir: vulns
+  tools-reports: reports
+  poc-dir: poc
+  output-reports: outputs
+  template-report-dir: templates
