@@ -12,8 +12,8 @@ import (
 
 
 var statsCmd = &cobra.Command{
-	Use:   "stats",
-	Short: "Simple stats of the Vulnerabilities",
+	Use:   "stat",
+	Short: "Simple statistic of the Vulnerabilities",
 	Long:  `Generate the new project include with dirs and config.yml`,
 	Run: func(cmd *cobra.Command, args []string) {
 		var cfg utils.UserConfig

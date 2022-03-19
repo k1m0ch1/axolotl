@@ -1,20 +1,21 @@
 package main
 
 import(
-	"os"
 	"log"
 	"fmt"		
 	
 	cmd "github.com/k1m0ch1/axolotl/cmd"
 	utils "github.com/k1m0ch1/axolotl/utils"
+	figure "github.com/common-nighthawk/go-figure"
 )
 
 func main(){
 
-	cmd.Execute()
-
 	var cfg utils.UserConfig
 	cfg.Load("config.yml")
+
+	var app utils.App
+	app.Version = "0.1.0-alpha"
 
 	HostFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.HostsIdentityDir), "*.yml")
 	if err != nil {
@@ -30,13 +31,13 @@ func main(){
 		log.Fatal(err)
 	}
 
-	os.Exit(0)
-	
-	fmt.Printf("\n==================================")
-	fmt.Printf("\n|| Axolotl ")
-	fmt.Printf("\n|| Ez pentest findings management")
-	fmt.Printf("\n|| %d Host and %d Vuln Available", len(HostFile), len(VulnFile)) 
-	fmt.Printf("\n==================================\n\n")
-	
-	fmt.Println("\n\nBye!\n")
+	figure.NewFigure("AXOLOTL", "starwars", true).Print()
+
+	fmt.Printf("\n                    Axolotl - Ez pentest vuln record          ")
+	fmt.Printf("\n                        v%s by k1m0ch1", app.Version)
+	fmt.Printf("\n                      %d Host and %d Vuln Recorded", len(HostFile), len(VulnFile))
+	fmt.Printf("\n                 Info: https://github.com/k1m0ch1/axolotl\n\n") 
+
+	cmd.Execute()
+
 }

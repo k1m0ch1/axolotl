@@ -14,9 +14,8 @@ var (
 	rootCmd = &cobra.Command{
 		Use:   "axolotl",
 		Short: "Axolotl is the productivity tools for bug bounty hackers to document the bug finding",
-		Long: `A simple bug reporting tools for hackers to input the finding
-					  Inspired from nuclei.
-					  Complete documentation is available at http://k1m0ch1.github.io`,
+		Long: `A simple bug reporting tools for hackers to input the finding Inspired 
+from nuclei. Complete documentation is available at http://k1m0ch1.github.io`,
 	}
 )
 

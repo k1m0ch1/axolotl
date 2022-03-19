@@ -10,6 +10,10 @@ import(
 	yaml "github.com/goccy/go-yaml"
 )
 
+type App struct{
+    Version string
+}
+
 func (h *HostIdentity) Load(filename string) *HostIdentity {
     yamlFile, err := ioutil.ReadFile(filename)
     if err != nil {
