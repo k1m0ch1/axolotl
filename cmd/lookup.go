@@ -18,13 +18,15 @@ var lookupCmd = &cobra.Command{
 		var cfg utils.UserConfig
 		cfg.Load("config.yml")
 		
+		fmt.Printf("Search Result record with ")
+
 		found := 0
 		if Vuln != "" {
 			VulnFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.VulnDir), "*.yml")
 			if err != nil {
 				log.Fatal(err)
 			}
-
+			fmt.Printf("Vulnerability Type `%s`:\n", Vuln)
 			for _, f := range VulnFile {
 				var v utils.Finding
 				v.Load(f)
@@ -44,6 +46,18 @@ var lookupCmd = &cobra.Command{
 			log.Fatal(err)
 		}
 		
+		if TechStacks != "" {
+			fmt.Printf("Technology Stack `%s`:\n", TechStacks)
+		}
+
+		if Tags != "" {
+			fmt.Printf("Tag `%s`:\n", Tags)
+		}
+
+		if Ports != "" {
+			fmt.Printf("Port `%s`:\n", Ports)
+		}
+
 		for _, f := range HostFile {
 			var h utils.HostIdentity
 			h.Load(f)

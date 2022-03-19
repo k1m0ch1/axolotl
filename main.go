@@ -1,6 +1,7 @@
 package main
 
 import(
+	"os"
 	"log"
 	"fmt"		
 	
@@ -31,13 +32,22 @@ func main(){
 		log.Fatal(err)
 	}
 
-	figure.NewFigure("AXOLOTL", "starwars", true).Print()
+	if len(os.Args) == 1 || os.Args[0] == "-h"{
+		figure.NewFigure("AXOLOTL", "starwars", true).Print()
+		fmt.Printf("\n                    Axolotl - Ez pentest vuln record          ")
+		fmt.Printf("\n                        v%s by k1m0ch1", app.Version)
+		fmt.Printf("\n                      %d Host and %d Vuln Recorded", len(HostFile), len(VulnFile))
+		fmt.Printf("\n                 Info: https://github.com/k1m0ch1/axolotl\n\n") 
+	}else{
+		fmt.Printf("\n──────────────────────────────────────")
+		fmt.Printf("\nAxolotl v%s - Ez Vuln Record", app.Version)
+		fmt.Printf("\nhttps://github.com/k1m0ch1/axolotl")
+		fmt.Printf("\n──────────────────────────────────────	\n\n")
+	}
 
-	fmt.Printf("\n                    Axolotl - Ez pentest vuln record          ")
-	fmt.Printf("\n                        v%s by k1m0ch1", app.Version)
-	fmt.Printf("\n                      %d Host and %d Vuln Recorded", len(HostFile), len(VulnFile))
-	fmt.Printf("\n                 Info: https://github.com/k1m0ch1/axolotl\n\n") 
 
 	cmd.Execute()
+
+	fmt.Println("\n")
 
 }
