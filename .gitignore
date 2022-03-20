@@ -1,1 +1,8 @@
 *.yml
+hosts
+poc
+reports
+vulns
+outputs
+config.yml
+.bin
