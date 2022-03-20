@@ -42,12 +42,12 @@ func main() {
 		fmt.Printf("\n──────────────────────────────────────")
 		fmt.Printf("\nAxolotl v%s - Ez Vuln Record", app.Version)
 		fmt.Printf("\nhttps://github.com/k1m0ch1/axolotl")
-		fmt.Printf("\n──────────────────────────────────────	\n\n")
+		fmt.Printf("\n──────────────────────────────────────\n\n")
 	}
 
 	err = cmd.Execute()
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println("")
+	fmt.Printf("\n\n")
 }

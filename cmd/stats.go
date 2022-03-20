@@ -25,10 +25,14 @@ var statsCmd = &cobra.Command{
 		}
 
 		var vulnTypeStat []utils.VulnType
+		domainList := make(map[string]int)
 
 		for _, f := range VulnFile {
 			var v utils.Finding
 			v.Load(f)
+
+			domainList[v.VulnInfo.Domain] += 1
+
 			ListVulnRaw := strings.ReplaceAll(v.VulnInfo.VulnType, " ", "")
 			ListVulns := strings.Split(ListVulnRaw, ",")
 			for _, value := range ListVulns {
@@ -63,10 +67,39 @@ var statsCmd = &cobra.Command{
 			}
 		}
 
-		fmt.Println("Vulnerability Type")
+		fmt.Println("Top 10 Host with Vulnerability Finding")
+
+		type kv struct {
+			Key   string
+			Value int
+		}
+
+		var rankedDomain []kv
+		for k, v := range domainList {
+			rankedDomain = append(rankedDomain, kv{k, v})
+		}
+
+		sort.Slice(rankedDomain, func(i, j int) bool {
+			return rankedDomain[i].Value > rankedDomain[j].Value
+		})
+		
+		maxSlice := len(rankedDomain)
+		if len(rankedDomain) > 10 {
+			maxSlice = 10
+		}
+
+		for index, value := range rankedDomain[0:maxSlice] {
+			fmt.Printf("\n%d. %s (%d finding)", index+1, value.Key, value.Value)
+		}
+
+		fmt.Println("\n\nTop 10 Vulnerability Type Finding")
 		currMin := 0
 		currMax := 0
-		for index, value := range vulnTypeStat {
+		maxSlice = len(vulnTypeStat)
+		if len(vulnTypeStat) > 10 {
+			maxSlice = 10
+		}
+		for index, value := range vulnTypeStat[0:maxSlice] {
 			fmt.Printf("\n%s with %d vuln", value.Type, len(value.ListOfVuln))
 			if len(value.ListOfVuln) < len(vulnTypeStat[currMin].ListOfVuln) {
 				currMin = index
@@ -77,7 +110,7 @@ var statsCmd = &cobra.Command{
 			}
 		}
 		fmt.Printf("\n")
-		fmt.Printf("\nwith the %s as the most vulnerability you found (%d vuln)", vulnTypeStat[currMax].Type, len(vulnTypeStat[currMax].ListOfVuln))
-		fmt.Printf("\nand %s as the least you found (%d vuln)", vulnTypeStat[currMin].Type, len(vulnTypeStat[currMin].ListOfVuln))
+		fmt.Printf("\nThe most Vulnerability `%s` (%d vuln)", vulnTypeStat[currMax].Type, len(vulnTypeStat[currMax].ListOfVuln))
+		
 	},
 }
