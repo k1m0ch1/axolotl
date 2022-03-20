@@ -1,4 +1,6 @@
-*.yml
+!.github/*
+!.github/*.yml
+
 hosts
 poc
 reports
