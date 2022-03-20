@@ -16,6 +16,7 @@ func init() {
 	statusCmd.AddCommand(duplicatedCmd)
 	statusCmd.AddCommand(holdCmd)
 	statusCmd.AddCommand(rejectedCmd)
+	statusCmd.AddCommand(reviewedCmd)
 	statusCmd.AddCommand(closedCmd)
 	statusCmd.AddCommand(completedCmd)
 }
@@ -41,7 +42,10 @@ var acceptedCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("created", cfg, Domain, Vuln)
+			err := utils.Stamp("created", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {
@@ -59,7 +63,10 @@ var reviewedCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("reviewed", cfg, Domain, Vuln)
+			err := utils.Stamp("reviewed", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {
@@ -77,7 +84,10 @@ var reportedCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("reported", cfg, Domain, Vuln)
+			err := utils.Stamp("reported", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {
@@ -95,7 +105,10 @@ var approvedCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("approved", cfg, Domain, Vuln)
+			err := utils.Stamp("approved", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {
@@ -113,7 +126,10 @@ var fixedCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("fixed", cfg, Domain, Vuln)
+			err := utils.Stamp("fixed", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {
@@ -131,7 +147,10 @@ var validatedCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("validated", cfg, Domain, Vuln)
+			err := utils.Stamp("validated", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {
@@ -149,7 +168,10 @@ var duplicatedCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("duplicated", cfg, Domain, Vuln)
+			err := utils.Stamp("duplicated", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {
@@ -167,7 +189,10 @@ var holdCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("hold", cfg, Domain, Vuln)
+			err := utils.Stamp("hold", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {
@@ -185,7 +210,10 @@ var rejectedCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("rejected", cfg, Domain, Vuln)
+			err := utils.Stamp("rejected", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {
@@ -203,7 +231,10 @@ var closedCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("closed", cfg, Domain, Vuln)
+			err := utils.Stamp("closed", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {
@@ -221,7 +252,10 @@ var completedCmd = &cobra.Command{
 		cfg.Load("config.yml")
 
 		if Domain != "" && Vuln != "" {
-			utils.Stamp("completed", cfg, Domain, Vuln)
+			err := utils.Stamp("completed", cfg, Domain, Vuln)
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
 
 		if Domain == "" && Vuln != "" {

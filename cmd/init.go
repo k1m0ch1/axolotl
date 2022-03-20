@@ -44,7 +44,10 @@ var initCmd = &cobra.Command{
 			fmt.Println("[!] File config.yml not exist, generate the template config")
 			fmt.Printf("\n[+] Tell me your name/nick: ")
 			fmt.Scanln(&name)
-			uC.GenerateConfig(name)
+			err := uC.GenerateConfig(name)
+			if err != nil {
+				fmt.Println(err)
+			}
 
 			uC.Load("./config.yml")
 

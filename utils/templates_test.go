@@ -8,7 +8,10 @@ import (
 
 func TestGenerateConfig(t *testing.T) {
 	var uc UserConfig
-	uc.GenerateConfig("test")
+	err := uc.GenerateConfig("test")
+	if err != nil {
+		t.Fatal(err)
+	}
 	content, err := ioutil.ReadFile("./config.yml")
 
 	if err != nil {

@@ -45,6 +45,9 @@ func main() {
 		fmt.Printf("\n──────────────────────────────────────	\n\n")
 	}
 
-	cmd.Execute()
+	err = cmd.Execute()
+	if err != nil {
+		fmt.Println(err)
+	}
 	fmt.Println("")
 }

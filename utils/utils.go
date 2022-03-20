@@ -73,10 +73,9 @@ func WalkMatch(root, pattern string) ([]string, error) {
 }
 
 func CheckDirAndCreate(paths string) (bool, error) {
-	path := fmt.Sprintf("%s", paths)
-	if _, err := os.Stat(path); os.IsNotExist(err) {
-		fmt.Printf("\n[?] The dir %s is not yet created, I will create this", path)
-		err := os.Mkdir(path, 644)
+	if _, err := os.Stat(paths); os.IsNotExist(err) {
+		fmt.Printf("\n[?] The dir %s is not yet created, I will create this", paths)
+		err := os.Mkdir(paths, 0644)
 		if err != nil {
 			return false, err
 		}

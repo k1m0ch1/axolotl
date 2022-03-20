@@ -218,7 +218,7 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 	}
 	pathDir := fmt.Sprintf("./%s/%s", cfg.DirConfig.VulnDir, host)
 	if _, err := os.Stat(pathDir); os.IsNotExist(err) {
-		err := os.Mkdir(pathDir, 644)
+		err := os.Mkdir(pathDir, 0644)
 		if err != nil {
 			return err
 		}

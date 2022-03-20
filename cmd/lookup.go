@@ -65,7 +65,7 @@ var lookupCmd = &cobra.Command{
 				ListStacks := strings.Split(ListStacksRaw, ",")
 				for _, f := range ListStacks {
 					tSA := TechStacks
-					if strings.Contains(tSA, ":") == true {
+					if strings.Contains(tSA, ":") {
 						parseLagi := strings.Split(ListStacksRaw, ",")
 						tSA = parseLagi[0]
 					}
