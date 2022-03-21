@@ -9,6 +9,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
+func init() {
+	lookupCmd.AddCommand(hostLookupCmd)
+	lookupCmd.AddCommand(vulnLookupCmd)
+}
+
 var lookupCmd = &cobra.Command{
 	Use:   "lookup",
 	Short: "Mode search",

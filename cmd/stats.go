@@ -110,7 +110,5 @@ var statsCmd = &cobra.Command{
 		for index, value := range rankedVuln[0:maxSlice] {
 			fmt.Printf("\n%d. `%s` with %d vuln", index+1, value.Key, value.Value)
 		}
-
-		// fmt.Printf("\n")		
 	},
 }
