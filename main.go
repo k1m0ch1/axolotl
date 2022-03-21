@@ -13,7 +13,7 @@ import (
 func main() {
 
 	var app utils.App
-	app.Version = "0.1.3-alpha"
+	app.Version = "0.1.4-alpha"
 
 	var cfg utils.UserConfig
 	cfg.Load("config.yml")
