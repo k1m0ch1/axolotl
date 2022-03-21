@@ -57,7 +57,7 @@ var statsCmd = &cobra.Command{
 						vulnTypeStat[currIndex].ListOfVuln = append(vulnTypeStat[currIndex].ListOfVuln, v.ID)
 					} else {
 						if v.ID == vulnTypeStat[currIndex].ListOfVuln[checkVuln] {
-							fmt.Println(v.ID, "Already exist at", vulnTypeStat[currIndex].Type, "with data", vulnTypeStat[currIndex].ListOfVuln, "with index", checkVuln)
+							// fmt.Println(v.ID, "Already exist at", vulnTypeStat[currIndex].Type, "with data", vulnTypeStat[currIndex].ListOfVuln, "with index", checkVuln)
 						} else {
 							vulnTypeStat[currIndex].ListOfVuln = append(vulnTypeStat[currIndex].ListOfVuln, v.ID)
 						}
@@ -93,24 +93,24 @@ var statsCmd = &cobra.Command{
 		}
 
 		fmt.Println("\n\nTop 10 Vulnerability Type Finding")
-		currMin := 0
-		currMax := 0
 		maxSlice = len(vulnTypeStat)
 		if len(vulnTypeStat) > 10 {
 			maxSlice = 10
 		}
-		for index, value := range vulnTypeStat[0:maxSlice] {
-			fmt.Printf("\n%s with %d vuln", value.Type, len(value.ListOfVuln))
-			if len(value.ListOfVuln) < len(vulnTypeStat[currMin].ListOfVuln) {
-				currMin = index
-			}
 
-			if len(value.ListOfVuln) > len(vulnTypeStat[currMax].ListOfVuln) {
-				currMax = index
-			}
+		var rankedVuln []kv
+		for _, v := range vulnTypeStat {
+			rankedVuln = append(rankedVuln, kv{v.Type, len(v.ListOfVuln)})
 		}
-		fmt.Printf("\n")
-		fmt.Printf("\nThe most Vulnerability `%s` (%d vuln)", vulnTypeStat[currMax].Type, len(vulnTypeStat[currMax].ListOfVuln))
-		
+
+		sort.Slice(rankedVuln, func(i, j int) bool {
+			return rankedVuln[i].Value > rankedVuln[j].Value
+		})
+
+		for index, value := range rankedVuln[0:maxSlice] {
+			fmt.Printf("\n%d. `%s` with %d vuln", index+1, value.Key, value.Value)
+		}
+
+		// fmt.Printf("\n")		
 	},
 }

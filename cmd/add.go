@@ -13,8 +13,7 @@ import (
 
 var addCmd = &cobra.Command{
 	Use:   "add",
-	Short: "Add mode you can create new host",
-	Long:  `Generate the new project include with dirs and config.yml`,
+	Short: "mode when you can generate new host template or vuln",
 	Run: func(cmd *cobra.Command, args []string) {
 		var cfg utils.UserConfig
 		cfg.Load("config.yml")
