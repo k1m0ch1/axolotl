@@ -30,11 +30,11 @@ v0.1.0-beta
 
 - [] Simple report defined by host
 
-- [] list all host
+- [X] list all host
 
 - [] find host and show count vuln
 
-- [] list all vuln with host
+- [X] list all vuln with host
 
 - [X] Timestamp vuln
 
