@@ -3,6 +3,8 @@ package utils
 import (
 	"fmt"
 	"io/ioutil"
+	"bufio"
+	"unicode"
 	"log"
 	"os"
 	"path/filepath"
@@ -30,9 +32,48 @@ func (h *UserConfig) Load(filename string) *UserConfig {
 	yamlFile, err := ioutil.ReadFile(filename)
 	if err != nil {
 		log.Printf("yamlFile.Get err   #%v ", err)
+		log.Printf("[?] Warning! File User Config not found\n")
+		reader := bufio.NewReader(os.Stdin)
+		fmt.Printf("\n[?] Do you want me to create the `config.yml` file ? (y/N): ")
+		text, _, _ := reader.ReadRune()
+		resultText := fmt.Sprintf("%c", unicode.ToLower(text))
+		if resultText == "n" {
+			log.Println("[+] Well ok")
+		} else if resultText == "y" {
+			var uC UserConfig
+			var name string
+			fmt.Println("[!] Generate the template config")
+			fmt.Printf("\n[+] Tell me your nick/name: ")
+			fmt.Scanln(&name)
+			err := uC.GenerateConfig(name)
+			if err != nil {
+				fmt.Println(err)
+			}
+
+			uC.Load("./config.yml")
+
+			dirs := []string{
+				uC.DirConfig.HostsIdentityDir,
+				uC.DirConfig.VulnDir,
+				uC.DirConfig.ToolsReports,
+				uC.DirConfig.PocDir,
+				uC.DirConfig.OutputReportsDir,
+				uC.DirConfig.TemplatesReportDir,
+			}
+
+			for _, v := range dirs {
+				path := fmt.Sprintf("./%s", v)
+				_, err := CheckDirAndCreate(path)
+				if err != nil {
+					fmt.Println("[X] Weird error occured ", err)
+				}
+			}
+		}
+		log.Fatal(err)
 	}
 	err = yaml.Unmarshal(yamlFile, h)
 	if err != nil {
+		log.Println("Error to get value from config.yml")
 		log.Fatalf("Unmarshal: %v", err)
 	}
 	return h

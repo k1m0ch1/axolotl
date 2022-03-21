@@ -113,6 +113,19 @@ func (cfg *UserConfig) GenerateHost(host string) error {
 	h.Info = defaultHostInfo
 	h.Recons = defaultRecons
 	h.VulnScans = defaultVulnScans
+	h.Exploratory = []Exploratory{
+		Exploratory{
+			Behaviour: "",
+			Type: "",
+			Desc: "",
+			Images: []Image{
+				Image{
+					Path:    "",
+					Caption: "",
+				},
+			},
+		},
+	}
 
 	bytes, err := yaml.Marshal(h)
 	if err != nil {
@@ -167,7 +180,7 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 				},
 			},
 			NucleiTemplate: "",
-			Exploit:        "",
+			Payload:        "",
 			Desc:           "",
 		},
 	}

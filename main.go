@@ -12,11 +12,11 @@ import (
 
 func main() {
 
+	var app utils.App
+	app.Version = "0.1.2-alpha"
+
 	var cfg utils.UserConfig
 	cfg.Load("config.yml")
-
-	var app utils.App
-	app.Version = "0.1.0-alpha"
 
 	HostFile, err := utils.WalkMatch(fmt.Sprintf("./%s/", cfg.DirConfig.HostsIdentityDir), "*.yml")
 	if err != nil {

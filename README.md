@@ -99,7 +99,7 @@ poc:
     images: []
   images: []
   nuclei-template: poc/script.yml
-  exploit: poc/script.py
+  payload: poc/script.py
   desc: if you bruteforce the gojek WA, the app will crash
 how-to-fix: []
 bounty:

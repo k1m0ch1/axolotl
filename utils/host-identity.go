@@ -1,10 +1,11 @@
 package utils
 
 type HostIdentity struct {
-	ID        string     `yaml:"id"`
-	Info      HostInfo   `yaml:"info"`
-	Recons    []Recon    `yaml:"recons"`
-	VulnScans []VulnScan `yaml:"vuln-scans"`
+	ID           string       `yaml:"id"`
+	Info         HostInfo     `yaml:"info"`
+	Recons       []Recon      `yaml:"recons"`
+	VulnScans    []VulnScan   `yaml:"vuln-scans"`
+	Exploratory  []Exploratory  `yaml:"exploratory"`
 }
 
 type Image struct {
@@ -34,6 +35,13 @@ type Other struct {
 	Source string `yaml:"source"`
 	Desc   string `yaml:"desc"`
 	URL    string `yaml:"url"`
+}
+
+type Exploratory struct {
+	Behaviour string  `yaml:"behaviour"`
+	Type      string  `yaml:"type"`
+	Desc      string  `yaml:"desc"`
+	Images    []Image `yaml:"images"`
 }
 
 type HostInfo struct {
