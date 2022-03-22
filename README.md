@@ -18,8 +18,9 @@
 
 axolotl is a pentest collaboration tools, comes with a simple feature, and it want to keep it simple, you only need to install axolotl and git on your machine. It has a main purpose to store and collaborate all finding with your team or yourself, and axolotl process the data to simplify lookup data, make a simple statistic and generate a simple report.
 
-
-![The Finding simple statistic](.github/preview-1.png)
+<p align="center">
+    <img height="50%" width="50%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/preview-1.png">
+</p>
 
 When it comes with pentestration collaboration tools, It becomes hard when you manage the document based, sometime rely on file you store on harddrive or cloud storage is hard to manage, and you need times to makes a report or statistic.
 
@@ -31,7 +32,39 @@ axolotl comes with a simple feature, and it want to keep it simple, you only nee
 
 Axolotl inspired from [nuclei](https://github.com/projectdiscovery/nuclei) project, where I'm using nuclei as the collaboration tools for poc.
 
+# tl;dr axolotl
+
+1. Download the binary from [Release](https://github.com/k1m0ch1/axolotl/releases)
+2. Install on your machine
+3. Run `axolotl init` to create new directory structure
+4. Generate host identity and input as you needs (if you didn't need the key, just delete the key)
+```
+axolotl add -d domain.com
+```
+5. Generate Vulnerability Finding and input as you needs (if you didn't need the key, just delete the key)
+```
+axolotl add -d domain.com -v vuln-name-without-space
+```
+6. List all current Host
+```
+axolotl lookup host
+```
+7. List all current Vuln
+```
+axolotl lookup vuln
+```
+8. Information Host with Vuln
+```
+axolotl info -d domain.com
+```
+9. simple statistic about your finding
+```
+axolotl stat
+```
+10. repeat from `4` to add more host and vuln finding
 # How to Use
+
+To download check stable version on [Release](https://github.com/k1m0ch1/axolotl/releases)
 
 Before everything else, you need to generate the directory structure of the axolotl, you can run this command
 
