@@ -47,7 +47,7 @@ Axolotl inspired from [nuclei](https://github.com/projectdiscovery/nuclei) proje
 axolotl add -d domain.com
 ```
 <p align="center">
-    <img height="70%" width="70%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/created-domain.png">
+    <img height="60%" width="60%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/created-domain.png">
 </p>
 5. Generate Vulnerability Finding and input as you needs (if you didn't need the key, just delete the key)
 
@@ -55,7 +55,7 @@ axolotl add -d domain.com
 axolotl add -d domain.com -v vuln-name-without-space
 ```
 <p align="center">
-    <img height="70%" width="70%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/vuln-add.png">
+    <img height="60%" width="60%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/vuln-add.png">
 </p>
 6. List all current Host
 
@@ -63,7 +63,7 @@ axolotl add -d domain.com -v vuln-name-without-space
 axolotl lookup host
 ```
 <p align="center">
-    <img height="70%" width="70%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/lookup-host.png">
+    <img height="50%" width="50%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/lookup-host.png">
 </p>
 7. List all current Vuln
 
@@ -71,7 +71,7 @@ axolotl lookup host
 axolotl lookup vuln
 ```
 <p align="center">
-    <img height="70%" width="70%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/lookup-vuln.png">
+    <img height="50%" width="50%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/lookup-vuln.png">
 </p>
 8. Information Host with Vuln
 
@@ -79,7 +79,7 @@ axolotl lookup vuln
 axolotl info -d domain.com
 ```
 <p align="center">
-    <img height="75%" width="75%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/info-domain.png">
+    <img height="65%" width="65%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/info-domain.png">
 </p>
 9. simple statistic about your finding
 
@@ -88,7 +88,7 @@ axolotl stat
 ```
 
 <p align="center">
-    <img height="70%" width="70%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/statistic.png">
+    <img height="65%" width="65%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/statistic.png">
 </p>
 10. repeat from `4` to add more host and vuln finding
 
