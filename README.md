@@ -90,6 +90,7 @@ axolotl stat
 <p align="center">
     <img height="65%" width="65%" src="https://github.com/k1m0ch1/axolotl/raw/master/.github/img/statistic.png">
 </p>
+
 10. repeat from `4` to add more host and vuln finding
 
 Check [How to use](https://axolotl.readthedocs.io/en/latest/) page for detail how to use
