@@ -9,6 +9,7 @@
 
 ![](https://img.shields.io/twitter/follow/BukanYahya?style=social)
 ![](https://img.shields.io/github/go-mod/go-version/k1m0ch1/axolotl)
+![](https://img.shields.io/github/v/release/k1m0ch1/axolotl)
 ![](https://img.shields.io/github/commit-activity/w/k1m0ch1/axolotl)
 ![](https://img.shields.io/github/last-commit/k1m0ch1/axolotl)
 ![](https://img.shields.io/github/release-date/k1m0ch1/axolotl)
