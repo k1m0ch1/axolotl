@@ -1,26 +1,17 @@
-```
-                   ___      ___   ___   ______    __        ______   .___________. __
-                  /   \     \  \ /  /  /  __  \  |  |      /  __  \  |           ||  |
-                 /  ^  \     \  V  /  |  |  |  | |  |     |  |  |  | `---|  |----`|  |
-                /  /_\  \     >   <   |  |  |  | |  |     |  |  |  |     |  |     |  |
-               /  _____  \   /  .  \  |  `--'  | |  `----.|  `--'  |     |  |     |  `----.
-              /__/     \__\ /__/ \__\  \______/  |_______| \______/      |__|     |_______|
-```
+.. image:: img/banner.png
 
-![](https://img.shields.io/twitter/follow/BukanYahya?style=social)
-![](https://img.shields.io/github/go-mod/go-version/k1m0ch1/axolotl)
-![](https://img.shields.io/github/commit-activity/w/k1m0ch1/axolotl)
-![](https://img.shields.io/github/last-commit/k1m0ch1/axolotl)
-![](https://img.shields.io/github/release-date/k1m0ch1/axolotl)
+.. image:: https://img.shields.io/twitter/follow/BukanYahya?style=social
+.. image:: https://img.shields.io/github/go-mod/go-version/k1m0ch1/axolotl
+.. image:: https://img.shields.io/github/commit-activity/w/k1m0ch1/axolotl
+.. image:: https://img.shields.io/github/last-commit/k1m0ch1/axolotl
+.. image:: https://img.shields.io/github/release-date/k1m0ch1/axolotl
 
-# Axolotl - ez vuln record
+Axolotl - ez vuln record
+###########
 
-axolotl is a pentest collaboration tools, comes with a simple feature, and it want to keep it simple, you only need to install axolotl and git on your machine. It has a main purpose to store and collaborate all finding with your team or yourself, and axolotl process the data to simplify lookup data, make a simple statistic and generate a simple report.
-
-
-![The Finding simple statistic](.github/preview-1.png)
-
-When it comes with pentestration collaboration tools, It becomes hard when you manage the document based, sometime rely on file you store on harddrive or cloud storage is hard to manage, and you need times to makes a report or statistic.
+A simple bug reporting tools for bug hunter to input the finding and Host Identity, by record all the finding with git and without needs to install the tools.
+This tools created trying to solve problem for pentester/ bug bounty hunter when they need to manage the host information or finding, 
+it becomes hard when you manage the document based, sometime rely on file you store on harddrive or cloud storage is hard to manage, and you need times to makes a report or statistic.
 
 
 Another option, you can manage every finding with "any" pentest documentation tools, sometime with great feature generate documentation and statistic, but it comes with problem you need to pay, sometime you need to install on your server/local and have many requirement to install.
@@ -28,10 +19,11 @@ Another option, you can manage every finding with "any" pentest documentation to
 
 axolotl comes with a simple feature, and it want to keep it simple, you only need to install axolotl and git on your machine. It has a main purpose to store and collaborate all finding with your team or yourself, and axolotl process the data to simplify lookup data, make a simple statistic and generate a simple report.
 
+
 Axolotl inspired from [nuclei](https://github.com/projectdiscovery/nuclei) project, where I'm using nuclei as the collaboration tools for poc.
 
-# How to Use
-
+How to Use
+###########
 Before everything else, you need to generate the directory structure of the axolotl, you can run this command
 
 ```
@@ -53,7 +45,7 @@ dir
 
 ok after you init the project, next you need to understand the use of this tools, this is the flow where axolotl used:
 
-![The Simple flow of Axolotl](.github/flow-axolotl.png)
+![The Simple flow of Axolotl](img/flow-axolotl.png)
 
 
 1. whenever you want to assessment you need to understand about the Target, usually called reconaissance Process, so you need to input all the target Identity Information, this is called `HostIdentity` 
