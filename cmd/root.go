@@ -36,4 +36,5 @@ func init() {
 	rootCmd.AddCommand(lookupCmd)
 	rootCmd.AddCommand(statusCmd)
 	rootCmd.AddCommand(infoCmd)
+	rootCmd.AddCommand(genCmd)
 }

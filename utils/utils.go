@@ -16,6 +16,8 @@ type App struct {
 	Version string
 }
 
+type Pandoc []string
+
 func (h *HostIdentity) Load(filename string) *HostIdentity {
 	yamlFile, err := ioutil.ReadFile(filename)
 	if err != nil {
