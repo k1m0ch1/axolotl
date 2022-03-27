@@ -8,3 +8,4 @@ vulns
 outputs
 config.yml
 .bin
+*.pdf

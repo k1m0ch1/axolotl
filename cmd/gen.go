@@ -4,9 +4,11 @@ import (
 	"os"
 	"fmt"
 	"log"
+	"bytes"
 	"strings"
 	"os/exec"
 	"io/ioutil"
+	"text/template"
 
 	"github.com/k1m0ch1/axolotl/utils"
 	"github.com/spf13/cobra"
@@ -54,24 +56,57 @@ var genCmd = &cobra.Command{
 		}else{
 			if Output != "" && Template != "" {
 				var domain utils.HostIdentity
+				var ReportVar utils.ReportVar
+				var buf bytes.Buffer
+				var vulns []utils.Finding
 				domain.Load(fmt.Sprintf("./%s/%s.yml", cfg.DirConfig.HostsIdentityDir, Domain))
+				pathVuln := fmt.Sprintf("./%s/%s/", cfg.DirConfig.VulnDir, domain.ID)
 
+				if _, err := os.Stat(pathVuln); os.IsNotExist(err) {
+					fmt.Println("0 Result Vulnerability")
+					os.Exit(0)
+				}else{
+					// get many vuln-type found
+					VulnFile, err := utils.WalkMatch(pathVuln, "*.yml")
+					if err != nil {
+						fmt.Println(err)
+					}
+	
+					for _, f := range VulnFile {
+						var v utils.Finding
+						v.Load(f)
+						vulns = append(vulns, v)
+					}
+				}
+
+				ReportVar.Host = domain
+				ReportVar.User = cfg
+				ReportVar.Vulns = vulns
 				content, _ := ioutil.ReadFile(Template)
 
 				sContent := string(content)
 
-				sContent = strings.ReplaceAll(sContent, "{{Host.Info.URL}}", domain.Info.URL)
-				sContent = strings.ReplaceAll(sContent, "{{Host.Info.Desc}}", domain.Info.Desc)
-				sContent = strings.ReplaceAll(sContent, "{{Host.Info.HostIP}}", domain.Info.HostIP)
-				sContent = strings.ReplaceAll(sContent, "{{UserConfig.ProjectOwner}}", cfg.ProjectOwner)
-				sContent = strings.ReplaceAll(sContent, "{{UserConfig.Email}}", cfg.Email)
+				tmpl, err := template.New("test").Funcs(template.FuncMap{
+					"add": func(a, b int) int {
+						return a + b
+					},
+				}).Parse(sContent)
+				if err != nil {
+					log.Fatal(err)
+				}
+				err = tmpl.Execute(&buf, ReportVar)
+				if err != nil {
+					log.Fatal(err)
+				}
+
+				result := buf.String()
 				
 				tmpFile, err := ioutil.TempFile("", "axolotl-templates*.md")
 				if err != nil {
 					log.Fatal(err)
 				}
 
-				if _, err := tmpFile.Write([]byte(sContent)); err != nil {
+				if _, err := tmpFile.Write([]byte(result)); err != nil {
 					fmt.Println(err)
 				}
 			
