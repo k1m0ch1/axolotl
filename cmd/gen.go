@@ -43,8 +43,7 @@ var genCmd = &cobra.Command{
 			log.Fatal(err)
 		}
 
-		var Pandoc utils.Pandoc
-		Pandoc = strings.Split(string(out),"\n")
+		Pandoc := strings.Split(string(out),"\n")
 		pandorDirConfig := strings.ReplaceAll(strings.Split(Pandoc[3], ":")[1], " ", "")
 		templateIsExist := fmt.Sprintf("%s/templates/eisvogel.latex", pandorDirConfig)
 		if _, err := os.Stat(templateIsExist); os.IsNotExist(err) {
@@ -57,7 +56,7 @@ var genCmd = &cobra.Command{
 				var domain utils.HostIdentity
 				domain.Load(fmt.Sprintf("./%s/%s.yml", cfg.DirConfig.HostsIdentityDir, Domain))
 
-				content, err := ioutil.ReadFile(Template)
+				content, _ := ioutil.ReadFile(Template)
 
 				sContent := string(content)
 
