@@ -1,0 +1,6 @@
+FROM golang:1.17-alpine3.15 as builder
+
+COPY . /goapp
+WORKDIR /goapp
+
+RUN apk add git build-base && go test -v ./...
