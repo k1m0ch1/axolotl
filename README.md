@@ -95,6 +95,60 @@ axolotl stat
 
 Check [How to use](https://axolotl.readthedocs.io/en/latest/) page for detail how to use
 
+## Docker Usage
+
+Building
+
+```
+docker build . -t axolotl
+```
+
+Run it with volume
+
+```
+docker run -v ./testworkdir:/workdir -it axolotl --help
+```
+
+## Operation in docker
+
+Here is sample commands with docker
+
+```
+PS C:\> docker run -v ./testworkdir:/workdir -it axolotl add -d example.com
+
+──────────────────────────────────────
+Axolotl v0.2.0-alpha - Ez Vuln Record
+https://github.com/k1m0ch1/axolotl
+──────────────────────────────────────
+
+[+] Host example.com is Created at ./hosts
+
+PS C:\> docker run -v ./testworkdir:/workdir -it axolotl add -d example.com -p 443 -v IDOR
+
+──────────────────────────────────────
+Axolotl v0.2.0-alpha - Ez Vuln Record
+https://github.com/k1m0ch1/axolotl
+──────────────────────────────────────
+
+[+] File IDOR.yml is generated at ./vulns, Happy Hacking!
+
+PS C:\> docker run -v ./testworkdir:/workdir -it axolotl info -d example.com
+
+──────────────────────────────────────
+Axolotl v0.2.0-alpha - Ez Vuln Record
+https://github.com/k1m0ch1/axolotl
+──────────────────────────────────────
+Info Result of the Domain `example.com`
+
+Domain `example.com`  ()
+
+
+Technology :
+
+Current Vulnerability :
+1. IDOR
+    ()
+```
 
 ## Release and Contributing
 
