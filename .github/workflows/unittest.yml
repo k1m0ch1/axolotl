@@ -31,4 +31,4 @@ jobs:
             dep ensure
         fi
         go test -v ./... || true
-        ls -lahR ./temporarydir
+        ls -lahR ./utils/temporarydir
