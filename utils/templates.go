@@ -46,7 +46,7 @@ func (cfg *UserConfig) GenerateConfig(name string) error {
 		return err
 	}
 
-	err = os.WriteFile("./config.yml", bytes, 0664)
+	err = os.WriteFile("./config.yml", bytes, 0644)
 	if err != nil {
 		return err
 	}
@@ -129,7 +129,7 @@ func (cfg *UserConfig) GenerateHost(host string) error {
 
 	pathDir := fmt.Sprintf("./%s", cfg.DirConfig.HostsIdentityDir)
 	if _, err := os.Stat(pathDir); os.IsNotExist(err) {
-		err := os.MkdirAll(pathDir, 0664)
+		err := os.MkdirAll(pathDir, 0644)
 		if err != nil {
 			return err
 		}
@@ -139,7 +139,7 @@ func (cfg *UserConfig) GenerateHost(host string) error {
 	if err != nil {
 		return err
 	}
-	err = os.WriteFile(fmt.Sprintf("./%s/%s.yml", cfg.DirConfig.HostsIdentityDir, host), bytes, 0664)
+	err = os.WriteFile(fmt.Sprintf("./%s/%s.yml", cfg.DirConfig.HostsIdentityDir, host), bytes, 0644)
 	if err != nil {
 		return err
 	}
@@ -239,13 +239,13 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 	}
 	pathDir := fmt.Sprintf("./%s/%s", cfg.DirConfig.VulnDir, host)
 	if _, err := os.Stat(pathDir); os.IsNotExist(err) {
-		err := os.MkdirAll(pathDir, 0664)
+		err := os.MkdirAll(pathDir, 0644)
 		if err != nil {
 			return err
 		}
 	}
 
-	err = os.WriteFile(fmt.Sprintf("./%s/%s/%s.yml", cfg.DirConfig.VulnDir, host, nameVuln), bytes, 0664)
+	err = os.WriteFile(fmt.Sprintf("./%s/%s/%s.yml", cfg.DirConfig.VulnDir, host, nameVuln), bytes, 0644)
 	if err != nil {
 		return err
 	}
@@ -258,7 +258,7 @@ func (cfg *UserConfig) GenerateUserConfig() []byte {
 	if err != nil {
 		log.Fatalf("Marshal: %v", err)
 	}
-	err = os.WriteFile("./config.yml", bytes, 0664)
+	err = os.WriteFile("./config.yml", bytes, 0644)
 	if err != nil {
 		log.Printf("err   #%v ", err)
 	}

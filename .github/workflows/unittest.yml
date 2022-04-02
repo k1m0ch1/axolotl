@@ -23,6 +23,7 @@ jobs:
     - name: Get dependencies & Test
       run: |
         id
+        chmod -R 777 .
         ls -lah
         go get -v -t -d ./...
         if [ -f Gopkg.toml ]; then
