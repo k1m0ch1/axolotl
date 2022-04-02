@@ -29,5 +29,4 @@ jobs:
             curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
             dep ensure
         fi
-        pwd
-        go test -v ./...
+        sudo go test -v ./...
