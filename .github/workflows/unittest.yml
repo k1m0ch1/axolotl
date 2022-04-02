@@ -25,10 +25,11 @@ jobs:
         id
         pwd
         ls -lah
+        mkdir -p ./utils/temporarydir
         go get -v -t -d ./...
         if [ -f Gopkg.toml ]; then
             curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
             dep ensure
         fi
         go test -v ./... || true
-        ls -lah ./utils
+        ls -lah ./utils/temporarydir
