@@ -22,9 +22,12 @@ jobs:
 
     - name: Get dependencies & Test
       run: |
-        sudo go get -v -t -d ./...
+        id
+        pwd
+        ls -lah
+        go get -v -t -d ./...
         if [ -f Gopkg.toml ]; then
             curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
             dep ensure
         fi
-        sudo go test -v ./...
+        go test -v ./...

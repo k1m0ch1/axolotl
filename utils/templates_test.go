@@ -24,7 +24,7 @@ func TestGenerateConfig(t *testing.T) {
 }
 
 func TestGenerateVuln(t *testing.T) {
-	randomdir := randstr.Hex(12)
+	randomdir := randstr.Hex(6)
 	var uc UserConfig
 	uc.DirConfig.VulnDir = fmt.Sprintf("temporarydir/%s/vulns", randomdir)
 
@@ -44,7 +44,7 @@ func TestGenerateVuln(t *testing.T) {
 }
 
 func TestGenerateHost(t *testing.T) {
-	randomdir := randstr.Hex(12)
+	randomdir := randstr.Hex(6)
 	var uc UserConfig
 	uc.DirConfig.HostsIdentityDir = fmt.Sprintf("temporarydir/%s/hosts", randomdir)
 
