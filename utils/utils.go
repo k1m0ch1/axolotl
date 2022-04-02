@@ -1,13 +1,13 @@
 package utils
 
 import (
+	"bufio"
 	"fmt"
 	"io/ioutil"
-	"bufio"
-	"unicode"
 	"log"
 	"os"
 	"path/filepath"
+	"unicode"
 
 	yaml "github.com/goccy/go-yaml"
 )

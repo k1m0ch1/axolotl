@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"os"
 	"fmt"
+	"os"
 
 	"github.com/k1m0ch1/axolotl/utils"
 	"github.com/spf13/cobra"
@@ -30,7 +30,7 @@ var infoCmd = &cobra.Command{
 
 			if _, err := os.Stat(path); os.IsNotExist(err) {
 				fmt.Println("0 Result Vulnerability")
-			}else{
+			} else {
 				// get many vuln-type found
 				VulnFile, err := utils.WalkMatch(path, "*.yml")
 				if err != nil {

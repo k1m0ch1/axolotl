@@ -116,8 +116,8 @@ func (cfg *UserConfig) GenerateHost(host string) error {
 	h.Exploratory = []Exploratory{
 		Exploratory{
 			Behaviour: "",
-			Type: "",
-			Desc: "",
+			Type:      "",
+			Desc:      "",
 			Images: []Image{
 				Image{
 					Path:    "",
@@ -125,6 +125,14 @@ func (cfg *UserConfig) GenerateHost(host string) error {
 				},
 			},
 		},
+	}
+
+	pathDir := fmt.Sprintf("./%s", cfg.DirConfig.HostsIdentityDir)
+	if _, err := os.Stat(pathDir); os.IsNotExist(err) {
+		err := os.MkdirAll(pathDir, 0644)
+		if err != nil {
+			return err
+		}
 	}
 
 	bytes, err := yaml.Marshal(h)
@@ -231,7 +239,7 @@ func (cfg *UserConfig) GenerateVuln(host string, nameVuln string) error {
 	}
 	pathDir := fmt.Sprintf("./%s/%s", cfg.DirConfig.VulnDir, host)
 	if _, err := os.Stat(pathDir); os.IsNotExist(err) {
-		err := os.Mkdir(pathDir, 0644)
+		err := os.MkdirAll(pathDir, 0644)
 		if err != nil {
 			return err
 		}

@@ -12,4 +12,3 @@ build:
 
 dev-install:
 	sudo cp .bin/axolotl-amd64-linux /usr/bin/axolotl
-	

@@ -9,3 +9,4 @@ outputs
 config.yml
 .bin
 *.pdf
+temporarydir
