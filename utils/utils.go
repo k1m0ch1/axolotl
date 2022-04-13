@@ -118,7 +118,7 @@ func WalkMatch(root, pattern string) ([]string, error) {
 func CheckDirAndCreate(paths string) (bool, error) {
 	if _, err := os.Stat(paths); os.IsNotExist(err) {
 		fmt.Printf("\n[?] The dir %s is not yet created, I will create this", paths)
-		err := os.Mkdir(paths, 0644)
+		err := os.Mkdir(paths, 0755)
 		if err != nil {
 			return false, err
 		}
