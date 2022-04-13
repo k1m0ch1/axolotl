@@ -1,11 +1,11 @@
 package utils
 
 type HostIdentity struct {
-	ID           string       `yaml:"id"`
-	Info         HostInfo     `yaml:"info"`
-	Recons       []Recon      `yaml:"recons"`
-	VulnScans    []VulnScan   `yaml:"vuln-scans"`
-	Exploratory  []Exploratory  `yaml:"exploratory"`
+	ID          string        `yaml:"id"`
+	Info        HostInfo      `yaml:"info"`
+	Recons      []Recon       `yaml:"recons"`
+	VulnScans   []VulnScan    `yaml:"vuln-scans"`
+	Exploratory []Exploratory `yaml:"exploratory"`
 }
 
 type Image struct {

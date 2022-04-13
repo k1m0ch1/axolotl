@@ -82,7 +82,7 @@ var statsCmd = &cobra.Command{
 		sort.Slice(rankedDomain, func(i, j int) bool {
 			return rankedDomain[i].Value > rankedDomain[j].Value
 		})
-		
+
 		maxSlice := len(rankedDomain)
 		if len(rankedDomain) > 10 {
 			maxSlice = 10

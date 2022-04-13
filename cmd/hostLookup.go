@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"os"
 	"fmt"
 	"log"
+	"os"
 
 	"github.com/k1m0ch1/axolotl/utils"
 	"github.com/spf13/cobra"
@@ -32,7 +32,7 @@ var hostLookupCmd = &cobra.Command{
 			path := fmt.Sprintf("./%s/%s/", cfg.DirConfig.VulnDir, h.ID)
 			if _, err := os.Stat(path); os.IsNotExist(err) {
 				fmt.Printf("(0 vuln)")
-			}else{
+			} else {
 				// get many vuln-type found
 				VulnFile, err := utils.WalkMatch(path, "*.yml")
 				if err != nil {
